@@ -6,4 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".BookingActivity">
 
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="@+id/textView_date"
+        app:layout_constraintTop_toBottomOf="@+id/textView_date" />
+
+    <EditText
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:inputType="time"
+        app:layout_constraintStart_toStartOf="@+id/textView_time"
+        app:layout_constraintTop_toBottomOf="@+id/textView_time" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="134dp"
+        android:layout_marginLeft="134dp"
+        android:layout_marginTop="100dp"
+        android:text="Search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time" />
+
+    <TextView
+        android:id="@+id/textView_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="118dp"
+        android:text="date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="55dp"
+        android:text="time"
+        app:layout_constraintStart_toStartOf="@+id/date"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

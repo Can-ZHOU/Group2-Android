@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                startActivity(new Intent(MainActivity.this, BookingActivity.class));
+                                startActivity(new Intent(MainActivity.this, ChoiceActivity.class));
                             }
                         }
                     });

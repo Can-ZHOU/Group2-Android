@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                startActivity(new Intent(RegisterActivity.this, BookingActivity.class));
+                                startActivity(new Intent(RegisterActivity.this, ChoiceActivity.class));
                             }
                         }
                     });

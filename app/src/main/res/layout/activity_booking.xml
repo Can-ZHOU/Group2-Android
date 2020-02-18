@@ -10,25 +10,11 @@
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="15dp"
         android:ems="10"
-        android:hint="YYYY-MM-DD"
         android:inputType="date"
-        app:layout_constraintEnd_toEndOf="@+id/savedb"
-        app:layout_constraintHorizontal_bias="0.634"
-        app:layout_constraintStart_toStartOf="@+id/savedb"
+        app:layout_constraintStart_toStartOf="@+id/textView_date"
         app:layout_constraintTop_toBottomOf="@+id/textView_date" />
-
-    <TextView
-        android:id="@+id/textView_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:text="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/time"
@@ -36,62 +22,58 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="18dp"
         android:ems="10"
-        android:hint="HH:MM"
         android:inputType="time"
-        app:layout_constraintEnd_toEndOf="@+id/savedb"
-        app:layout_constraintHorizontal_bias="0.703"
-        app:layout_constraintStart_toStartOf="@+id/savedb"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
+        app:layout_constraintStart_toStartOf="@+id/textView_time"
+        app:layout_constraintTop_toBottomOf="@+id/textView_time" />
 
     <Button
-        android:id="@+id/savedb"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
-        android:text="Save Date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.364"
+        android:layout_marginStart="134dp"
+        android:layout_marginLeft="134dp"
+        android:layout_marginTop="100dp"
+        android:text="Search"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/time" />
+
+    <TextView
+        android:id="@+id/textView_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="118dp"
+        android:text="date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="55dp"
         android:text="time"
         app:layout_constraintStart_toStartOf="@+id/date"
         app:layout_constraintTop_toBottomOf="@+id/date" />
 
-    <EditText
-        android:id="@+id/room"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="166dp"
-        android:ems="10"
-        android:hint="enter room 0-9"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/savedb"
-        app:layout_constraintEnd_toEndOf="@+id/time"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/time"
-        app:layout_constraintTop_toBottomOf="@+id/time"
-        app:layout_constraintVertical_bias="1.0" />
-
     <TextView
-        android:id="@+id/roomId"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="roomId"
-        app:layout_constraintBottom_toTopOf="@+id/room"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_time"
-        app:layout_constraintVertical_bias="0.916" />
+        android:layout_marginStart="78dp"
+        android:layout_marginLeft="78dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginRight="76dp"
+        android:text="Booking Glassroom"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/date"
+        app:layout_constraintStart_toStartOf="@+id/textView_date"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -61,4 +61,19 @@
         app:layout_constraintStart_toStartOf="@+id/date"
         app:layout_constraintTop_toBottomOf="@+id/date" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:layout_marginLeft="78dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginRight="76dp"
+        android:text="Booking Glassroom"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/date"
+        app:layout_constraintStart_toStartOf="@+id/textView_date"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

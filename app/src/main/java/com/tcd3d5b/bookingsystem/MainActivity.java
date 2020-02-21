@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     EditText email, pwd;
-    Button register, signIn;
+    Button register, studentSignIn, professorSignIn;
     FirebaseAuth myFirebaseAuth;
     FirebaseAuth.AuthStateListener myAuthListener;
 
@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
         email = findViewById(R.id.email_login);
         pwd = findViewById(R.id.pwd_login);
         register = findViewById(R.id.button_login_register);
-        signIn = findViewById(R.id.button_login_signIn);
+        studentSignIn = findViewById(R.id.button_login_signIn);
+        professorSignIn = findViewById(R.id.button_login__professor);
 
         myAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        signIn.setOnClickListener(new View.OnClickListener() {
+        studentSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email_s = email.getText().toString();
@@ -61,7 +62,32 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                startActivity(new Intent(MainActivity.this, BookingActivity.class));
+                                startActivity(new Intent(MainActivity.this, ChoiceActivity.class));
+                            }
+                        }
+                    });
+                }
+            }
+        });
+
+        professorSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email_s = email.getText().toString();
+                String pwd_s = pwd.getText().toString();
+
+                if (email_s.isEmpty()) {
+                    email.setError("Please input email");
+                    email.requestFocus();
+                } else if (pwd_s.isEmpty()) {
+                    pwd.setError("Please input password");
+                    pwd.requestFocus();
+                } else {
+                    myFirebaseAuth.signInWithEmailAndPassword(email_s, pwd_s).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                startActivity(new Intent(MainActivity.this, ProfessorChoiceActivity.class));
                             }
                         }
                     });

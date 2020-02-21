@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PastpaperActivity"></activity>
+        <activity android:name=".ProfessorChoiceActivity"></activity>
+        <activity android:name=".ProfessorTimetableActivity" />
+        <activity android:name=".game2048.easy" />
+        <activity android:name=".game2048.hard" />
+        <activity android:name=".game2048.newGameField" />
+        <activity android:name=".game2048.Game2048MainActivity" />
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".ChoiceActivity" />
         <activity android:name=".BookingActivity" />

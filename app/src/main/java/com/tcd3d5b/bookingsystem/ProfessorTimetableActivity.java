@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class PastpaperActivity extends AppCompatActivity {
+public class ProfessorTimetableActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pastpaper);
+        setContentView(R.layout.activity_professor_timetable);
     }
 }

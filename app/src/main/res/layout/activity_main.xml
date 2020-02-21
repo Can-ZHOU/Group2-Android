@@ -31,21 +31,33 @@
         android:id="@+id/button_login_signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="299dp"
-        android:text="Sign in"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="27dp"
+        android:text="Student Sign in"
+        app:layout_constraintBottom_toTopOf="@+id/button_login__professor"
+        app:layout_constraintEnd_toEndOf="@+id/button_login__professor" />
 
     <Button
         android:id="@+id/button_login_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="18dp"
         android:text="Register"
-        app:layout_constraintStart_toStartOf="@+id/button_login_signIn"
-        app:layout_constraintTop_toBottomOf="@+id/button_login_signIn" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_login__professor" />
+
+    <Button
+        android:id="@+id/button_login__professor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginBottom="224dp"
+        android:text="Professor Sign In"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/button_login_register" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

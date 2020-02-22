@@ -1,63 +1,92 @@
 package com.tcd3d5b.bookingsystem;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.DownloadManager;
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-import java.util.logging.Formatter;
+import java.util.ArrayList;
+
 
 public class BookingActivity extends AppCompatActivity {
-
-    EditText date,time,room;
-    Button submit;
-
-    DatabaseReference dbDate;
+    private static final String TAG = "RoomNUmber";
+    private DatabaseReference DBref;
+    Button search;
+    EditText date;
+    EditText time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
-        date = findViewById(R.id.date);
-        time = findViewById(R.id.time);
-        room = findViewById(R.id.room);
-        submit = findViewById(R.id.savedb);
 
-        dbDate = FirebaseDatabase.getInstance().getReference("date");
+        if (android.os.Build.VERSION.SDK_INT > 9)
+        {
+            StrictMode.ThreadPolicy policy = new
+                    StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
 
-        submit.setOnClickListener(new View.OnClickListener() {
+        date = findViewById(R.id.book_glassroom_date);
+        time = findViewById(R.id.book_glassroom_time);
+        search = findViewById(R.id.button_book_glassroom_search);
+
+        search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addDate();
+                // TODO
+                // check whether input date and time are valid.
+                search(date.getText().toString(), time.getText().toString());
             }
         });
     }
-    private void addDate(){
-        String d = date.getText().toString().trim();
-        String t = time.getText().toString().trim();
-        String r = room.getText().toString().trim();
 
-        if(!TextUtils.isEmpty(d)) {
-        String id = dbDate.push().getKey();
+    private void search(String date_string, String time_string) {
+        DBref = FirebaseDatabase.getInstance().getReference();
 
-        Database datesave = new Database(d, t, r);
-        dbDate.child(id).setValue(datesave);
+        Query myQuery = DBref.child("glassroom").child("date").child(date_string).child(time_string);
 
-        Toast.makeText(this, "Added to DB",Toast.LENGTH_LONG).show();
-        }
-        else{
-            Toast.makeText(this, "404: enter some date",Toast.LENGTH_LONG).show();
-        }
+        myQuery.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if( !dataSnapshot.exists() || !dataSnapshot.hasChildren()) {
+                    //TODO
+                    // At this date and time, all rooms are available,
+                    // add this data, time and room 1 to the database.
+                } else {
+                    ArrayList<String> roomList = new ArrayList<String>();
+                    for (DataSnapshot room : dataSnapshot.getChildren()) {
+                        roomList.add(room.getValue().toString());
+                        // for debug
+                        Log.i(TAG, "onDataChange: room number : " + room.getValue());
+                    }
 
+                    int roomNumber = roomList.size();
+                    //TODO
+                    // At this date and time with this roomNumber to the database.
+
+                    // Jump to AvailableGlassroomActivity
+                    startActivity(new Intent(BookingActivity.this, AvailableGlassroomActivity.class));
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.i(TAG, "Fail......");
+            }
+        });
     }
 }

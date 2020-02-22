@@ -7,7 +7,7 @@
     tools:context=".BookingActivity">
 
     <EditText
-        android:id="@+id/date"
+        android:id="@+id/book_glassroom_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_date" />
 
     <EditText
-        android:id="@+id/time"
+        android:id="@+id/book_glassroom_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_time" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_book_glassroom_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="134dp"
@@ -37,7 +37,7 @@
         android:layout_marginTop="100dp"
         android:text="Search"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/time" />
+        app:layout_constraintTop_toBottomOf="@+id/book_glassroom_time" />
 
     <TextView
         android:id="@+id/textView_date"
@@ -58,8 +58,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="55dp"
         android:text="time"
-        app:layout_constraintStart_toStartOf="@+id/date"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
+        app:layout_constraintStart_toStartOf="@+id/book_glassroom_date"
+        app:layout_constraintTop_toBottomOf="@+id/book_glassroom_date" />
 
     <TextView
         android:id="@+id/textView3"
@@ -72,7 +72,7 @@
         android:layout_marginRight="76dp"
         android:text="Booking Glassroom"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/date"
+        app:layout_constraintEnd_toEndOf="@+id/book_glassroom_date"
         app:layout_constraintStart_toStartOf="@+id/textView_date"
         app:layout_constraintTop_toTopOf="parent" />
 

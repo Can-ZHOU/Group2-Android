@@ -1,6 +1,5 @@
 package com.tcd3d5b.bookingsystem;
 
-import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -8,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -47,9 +47,16 @@ public class BookingActivity extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO
-                // check whether input date and time are valid.
-                search(date.getText().toString(), time.getText().toString());
+                // Check Formatting for Date & Time
+                if (date.getText().toString().matches("^(((2[0-9])[0-9]{2})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01]))")) {
+                    if (time.getText().toString().matches("(1[0-9]|2[0-1]):(00)")) {
+                        Toast.makeText(getApplicationContext(), "Search: " + date.getText().toString() + time.getText().toString(), Toast.LENGTH_LONG).show();
+                        search(date.getText().toString(), time.getText().toString());
+                    } else
+                        Toast.makeText(getApplicationContext(), "TimeFormatError: Use {XX:00} Format", Toast.LENGTH_LONG).show();
+                }
+                else
+                    Toast.makeText(getApplicationContext(), "DateFormatError: Use {20YY-MM-DD} Format", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -63,9 +70,12 @@ public class BookingActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if( !dataSnapshot.exists() || !dataSnapshot.hasChildren()) {
-                    //TODO
-                    // At this date and time, all rooms are available,
-                    // add this data, time and room 1 to the database.
+                    /*if(!date_string){
+
+                        // At this date and time, all rooms are available,
+                        // add this data, time and room 1 to the database.
+                        roomList.add(room.getValue().toString())
+                    }*/
                 } else {
                     ArrayList<String> roomList = new ArrayList<String>();
                     for (DataSnapshot room : dataSnapshot.getChildren()) {

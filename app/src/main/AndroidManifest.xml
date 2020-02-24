@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".riddle"></activity>
-        <activity android:name=".ProfessorChoiceActivity" />
+        <activity android:name=".ProfessorChoiceActivity"></activity>
         <activity android:name=".ProfessorTimetableActivity" />
         <activity android:name=".game2048.easy" />
         <activity android:name=".game2048.hard" />

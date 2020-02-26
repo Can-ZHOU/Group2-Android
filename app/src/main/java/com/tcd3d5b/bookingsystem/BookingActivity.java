@@ -50,8 +50,9 @@ public class BookingActivity extends AppCompatActivity {
                 // Check Formatting for Date & Time
                 if (date.getText().toString().matches("^(((2[0-9])[0-9]{2})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01]))")) {
                     if (time.getText().toString().matches("(1[0-9]|2[0-1]):(00)")) {
-                        Toast.makeText(getApplicationContext(), "Search: " + date.getText().toString() + time.getText().toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Confirmed: " + date.getText().toString() + time.getText().toString(), Toast.LENGTH_LONG).show();
                         search(date.getText().toString(), time.getText().toString());
+                        startActivity(new Intent(BookingActivity.this, ConfirmationActivity.class));
                     } else
                         Toast.makeText(getApplicationContext(), "TimeFormatError: Use {XX:00} Format", Toast.LENGTH_LONG).show();
                 }
@@ -63,25 +64,27 @@ public class BookingActivity extends AppCompatActivity {
 
     private void search(String date_string, String time_string) {
         DBref = FirebaseDatabase.getInstance().getReference();
-
+        final int roomId;
         Query myQuery = DBref.child("glassroom").child("date").child(date_string).child(time_string);
 
         myQuery.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 if( !dataSnapshot.exists() || !dataSnapshot.hasChildren()) {
                     /*if(!date_string){
-
+                    }*/
                         // At this date and time, all rooms are available,
                         // add this data, time and room 1 to the database.
-                        roomList.add(room.getValue().toString())
-                    }*/
+                        DBref.push().setValue(1);
+
                 } else {
                     ArrayList<String> roomList = new ArrayList<String>();
                     for (DataSnapshot room : dataSnapshot.getChildren()) {
                         roomList.add(room.getValue().toString());
                         // for debug
                         Log.i(TAG, "onDataChange: room number : " + room.getValue());
+                        DBref.push().setValue((int)room.getValue() + 1);
                     }
 
                     int roomNumber = roomList.size();

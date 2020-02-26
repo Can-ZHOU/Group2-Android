@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.ParseException;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,13 +36,6 @@ public class BookingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
 
-        if (android.os.Build.VERSION.SDK_INT > 9)
-        {
-            StrictMode.ThreadPolicy policy = new
-                    StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-        }
-
         date = findViewById(R.id.book_glassroom_date);
         time = findViewById(R.id.book_glassroom_time);
         search = findViewById(R.id.button_book_glassroom_search);
@@ -48,11 +44,9 @@ public class BookingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Check Formatting for Date & Time
-                if (date.getText().toString().matches("^(((2[0-9])[0-9]{2})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01]))")) {
+                if (checkValid(date.getText().toString())) {
                     if (time.getText().toString().matches("(1[0-9]|2[0-1]):(00)")) {
-                        Toast.makeText(getApplicationContext(), "Confirmed: " + date.getText().toString() + time.getText().toString(), Toast.LENGTH_LONG).show();
                         search(date.getText().toString(), time.getText().toString());
-                        startActivity(new Intent(BookingActivity.this, ConfirmationActivity.class));
                     } else
                         Toast.makeText(getApplicationContext(), "TimeFormatError: Use {XX:00} Format", Toast.LENGTH_LONG).show();
                 }
@@ -64,35 +58,33 @@ public class BookingActivity extends AppCompatActivity {
 
     private void search(String date_string, String time_string) {
         DBref = FirebaseDatabase.getInstance().getReference();
-        final int roomId;
-        Query myQuery = DBref.child("glassroom").child("date").child(date_string).child(time_string);
+
+        final Query myQuery = DBref.child("glassroom").child("date").child(date_string).child(time_string);
 
         myQuery.addValueEventListener(new ValueEventListener() {
+            private int roomNumber;
+            private boolean flag = false;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
                 if( !dataSnapshot.exists() || !dataSnapshot.hasChildren()) {
-                    /*if(!date_string){
-                    }*/
-                        // At this date and time, all rooms are available,
-                        // add this data, time and room 1 to the database.
-                        DBref.push().setValue(1);
-
+                    roomNumber = 1;
                 } else {
-                    ArrayList<String> roomList = new ArrayList<String>();
+                    ArrayList<String> roomList = new ArrayList<>();
                     for (DataSnapshot room : dataSnapshot.getChildren()) {
                         roomList.add(room.getValue().toString());
                         // for debug
                         Log.i(TAG, "onDataChange: room number : " + room.getValue());
-                        DBref.push().setValue((int)room.getValue() + 1);
                     }
-
-                    int roomNumber = roomList.size();
-                    //TODO
-                    // At this date and time with this roomNumber to the database.
-
-                    // Jump to AvailableGlassroomActivity
-                    startActivity(new Intent(BookingActivity.this, AvailableGlassroomActivity.class));
+                    roomNumber = roomList.size()+1;
+                }
+                if(roomNumber <= 9 && !flag){
+                    flag = true;
+                    addRooom(date.getText().toString(), time.getText().toString(), Integer.toString(roomNumber));
+                    Toast.makeText(getApplicationContext(), "Confirmed: " + date.getText().toString()  + time.getText().toString() + "Room: " + (char) roomNumber, Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(BookingActivity.this, ConfirmationActivity.class));
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "RoomError: Select another date", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -101,5 +93,36 @@ public class BookingActivity extends AppCompatActivity {
                 Log.i(TAG, "Fail......");
             }
         });
+    }
+
+    private void addRooom(String date, String time, String roomNumber) {
+        DBref.child("glassroom").child("date").child(date).child(time).child(roomNumber).setValue(roomNumber);
+    }
+    public static boolean checkValid(String strDate)
+    {
+        /* Check if date is 'null' */
+        if (strDate.trim().equals(""))
+        {
+            return true;
+        }
+        /* Date is not 'null' */
+        else
+        {
+            SimpleDateFormat strdate = new SimpleDateFormat("yyyy-MM-dd");
+            strdate.setLenient(false);
+            try
+            {
+                Date javaDate = strdate.parse(strDate);
+                System.out.println(strDate+" is valid date format");
+            }
+            /* Date format is invalid */
+            catch (ParseException e)
+            {
+                System.out.println(strDate+" is Invalid Date format");
+                return false;
+            }
+            /* Return true if date format is valid */
+            return true;
+        }
     }
 }

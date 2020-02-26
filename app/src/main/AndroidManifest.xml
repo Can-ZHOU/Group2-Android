@@ -15,10 +15,10 @@
             android:name=".ConfirmationActivity"
             android:label="@string/title_activity_confirmation"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter><action android:name="com.tcd3d5b.bookingsystem.BookingActivity"></action>
-            <category android:name="android.intent.category.DEFAULT"></category> </intent-filter>
+            <intent-filter>
+                <action android:name="com.tcd3d5b.bookingsystem.BookingActivity" />
+                <category android:name="android.intent.category.DEFAULT" /> </intent-filter>
         </activity>
-        <activity android:name=".AvailableGlassroomActivity" />
         <activity android:name=".ProfessorChoiceActivity" />
         <activity android:name=".ProfessorTimetableActivity" />
         <activity android:name=".game2048.easy" />

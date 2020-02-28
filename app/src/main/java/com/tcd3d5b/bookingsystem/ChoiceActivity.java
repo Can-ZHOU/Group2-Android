@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.tcd3d5b.bookingsystem.game2048.Game2048MainActivity;
 
 public class ChoiceActivity extends AppCompatActivity {
-    Button userProfile, booking, professorTimetable, game,riddle;
+    Button userProfile, booking, professorTimetable, game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class ChoiceActivity extends AppCompatActivity {
         booking = findViewById(R.id.button_booking);
         professorTimetable = findViewById(R.id.button_professor_timetable);
         game = findViewById(R.id.button_game);
-        riddle = findViewById(R.id.riddle);
+
 
         userProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,11 +50,6 @@ public class ChoiceActivity extends AppCompatActivity {
                 startActivity(new Intent(ChoiceActivity.this, Game2048MainActivity.class));
             }
         });
-        riddle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ChoiceActivity.this, riddle.class));
-            }
-        });
+
     }
 }

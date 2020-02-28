@@ -6,4 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".ProfessorTimetableActivity">
 
+    <Button
+        android:id="@+id/button_professor_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:text="Professor xx01"
+        app:layout_constraintEnd_toEndOf="@+id/professor_date"
+        app:layout_constraintTop_toBottomOf="@+id/professor_date" />
+
+    <Button
+        android:id="@+id/button_professor_02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="43dp"
+        android:text="Professor xx02"
+        app:layout_constraintStart_toStartOf="@+id/button_professor_01"
+        app:layout_constraintTop_toBottomOf="@+id/button_professor_01" />
+
+    <EditText
+        android:id="@+id/professor_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="29dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="@+id/textView_professor_date"
+        app:layout_constraintTop_toBottomOf="@+id/textView_professor_date" />
+
+    <TextView
+        android:id="@+id/textView_professor_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="148dp"
+        android:text="Date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

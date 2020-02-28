@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "218989177856",
-    "firebase_url": "https://bookingsystem-6efec.firebaseio.com",
-    "project_id": "bookingsystem-6efec",
-    "storage_bucket": "bookingsystem-6efec.appspot.com"
+    "project_number": "618576979270",
+    "firebase_url": "https://booking-system-3d5b.firebaseio.com",
+    "project_id": "booking-system-3d5b",
+    "storage_bucket": "booking-system-3d5b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:218989177856:android:24ce11c9fe040b3d307ce5",
+        "mobilesdk_app_id": "1:618576979270:android:40c8dbf30d4654fa427147",
         "android_client_info": {
           "package_name": "com.tcd3d5b.bookingsystem"
         }
       },
       "oauth_client": [
         {
-          "client_id": "218989177856-u7uk7oidmegptt59j3mv37vvjultlrld.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.tcd3d5b.bookingsystem",
-            "certificate_hash": "fdb2048b55af205bde3ee2950be37f6fd866440a"
-          }
-        },
-        {
-          "client_id": "218989177856-1aj8f8okkjngjea89kf2fdgf07mu9ma1.apps.googleusercontent.com",
+          "client_id": "618576979270-aiboa5174p61hotleffq6bib6tm9ttdk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDRBfBq8hm7Ii8gBd2gCAPqdznnBeYE6Lo"
+          "current_key": "AIzaSyDNAvFBQv9qlZXL03xpRQ5jnv8aLEOjPDw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "218989177856-1aj8f8okkjngjea89kf2fdgf07mu9ma1.apps.googleusercontent.com",
+              "client_id": "618576979270-aiboa5174p61hotleffq6bib6tm9ttdk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

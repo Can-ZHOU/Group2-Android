@@ -11,7 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".riddle"></activity>
         <activity android:name=".MyTimetableActivity"></activity>
         <activity android:name=".AddTimeableActivity" />
         <activity android:name=".ProfessorTimeConfirmActivity" />
@@ -33,10 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

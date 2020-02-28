@@ -4,91 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/trintiy_back">
+    tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/trintiy_back"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+    <Button
+        android:id="@+id/easyGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/size3x3"
+        />
 
-        <Button
-            android:id="@+id/easyGame"
-            android:layout_width="101dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="1dp"
-            android:background="@drawable/rounded_bt"
-            android:soundEffectsEnabled="true"
-            android:text="3 X 3"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.529"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.308"
-            app:layout_constraintVertical_chainStyle="packed" />
+    <Button
+        android:id="@+id/standartGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/size4x4"
 
-        <Button
-            android:id="@+id/standartGame"
-            android:layout_width="101dp"
-            android:layout_height="62dp"
-            android:background="@drawable/rounded_bt"
-            android:soundEffectsEnabled="true"
-            android:text="4 X 4"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.527"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.56" />
+        />
 
-        <Button
-            android:id="@+id/hardGame"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="109dp"
-            android:layout_height="68dp"
-            android:background="@drawable/rounded_bt"
-            android:soundEffectsEnabled="true"
-            android:text="5 X 5"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.529"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.78" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="406dp"
-            android:layout_height="131dp"
-            android:text="Please select the grid you want to play"
-            android:textColor="#000000"
-            android:textSize="48sp"
-            android:textStyle="bold"
-            app:fontFamily="cursive"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.709"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.062" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/hardGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/size5x5"
+        />
+</LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

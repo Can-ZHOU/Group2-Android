@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".riddle"></activity>
+
         <activity android:name=".MyTimetableActivity"></activity>
         <activity android:name=".AddTimeableActivity" />
         <activity android:name=".ProfessorTimeConfirmActivity" />

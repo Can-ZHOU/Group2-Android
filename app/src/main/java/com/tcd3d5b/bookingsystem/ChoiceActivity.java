@@ -22,7 +22,6 @@ public class ChoiceActivity extends AppCompatActivity {
         professorTimetable = findViewById(R.id.button_professor_timetable);
         game = findViewById(R.id.button_game);
 
-
         userProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +49,5 @@ public class ChoiceActivity extends AppCompatActivity {
                 startActivity(new Intent(ChoiceActivity.this, Game2048MainActivity.class));
             }
         });
-
     }
 }

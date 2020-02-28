@@ -3,6 +3,7 @@ package com.tcd3d5b.bookingsystem.game2048;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,12 @@ public class Game2048MainActivity extends AppCompatActivity {
                 startActivity(newGameField);
             }
         });
+
+
+        View backgroundImage = findViewById(R.id.linearLayout);
+        Drawable background = backgroundImage.getBackground();
+        background.setAlpha(20);
+
 
          Button easyField = findViewById(R.id.easyGame);
         easyField.setOnClickListener(new View.OnClickListener() {

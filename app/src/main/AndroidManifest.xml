@@ -21,7 +21,7 @@
         <activity android:name=".MyTimetableActivity" />
         <activity android:name=".AddTimeableActivity" />
         <activity android:name=".ProfessorTimeConfirmActivity" />
-        <activity android:name=".ConfirmationActivity" />
+        <activity android:name=".AvailableGlassroomActivity" />
         <activity android:name=".ProfessorChoiceActivity" />
         <activity android:name=".ProfessorTimetableActivity" />
         <activity android:name=".game2048.easy" />

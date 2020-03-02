@@ -47,7 +47,7 @@
         android:layout_marginBottom="32dp"
         android:background="@color/custombackground"
         android:text="@string/common_signin_button_text"
-        android:textColor="@color/back"
+        android:text="Register"
         app:layout_constraintBottom_toTopOf="@+id/button_register_signIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -63,34 +63,32 @@
         android:layout_marginRight="124dp"
         android:layout_marginBottom="252dp"
         android:background="@color/custombackground"
-        android:text="Register"
-        android:textColor="@color/back"
+        android:text="Sign In"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/Username"
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
+        android:layout_marginTop="161dp"
+        android:layout_marginBottom="12dp"
         android:text="Username"
-        app:layout_constraintBottom_toBottomOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/email_register" />
+        app:layout_constraintBottom_toTopOf="@+id/email_register"
+        app:layout_constraintStart_toStartOf="@+id/email_register"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
         android:text="Password"
         app:layout_constraintBottom_toTopOf="@+id/pwd_register"
-        app:layout_constraintEnd_toEndOf="@+id/Username"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/Username"
-        app:layout_constraintTop_toBottomOf="@+id/email_register"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintStart_toStartOf="@+id/pwd_register"
+        app:layout_constraintTop_toBottomOf="@+id/email_register" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

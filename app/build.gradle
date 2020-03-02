@@ -5,6 +5,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
+
         applicationId "com.tcd3d5b.bookingsystem"
         minSdkVersion 15
         targetSdkVersion 29
@@ -30,4 +31,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics:15.0.0'
     implementation 'com.google.firebase:firebase-core:15.0.0'
     implementation 'com.google.firebase:firebase-auth:15.0.0'
+    implementation 'com.google.firebase:firebase-database:15.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
 }

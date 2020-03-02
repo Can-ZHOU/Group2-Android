@@ -8,45 +8,61 @@
 
     <Button
         android:id="@+id/button_professor_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="134dp"
-        android:layout_marginLeft="134dp"
-        android:layout_marginBottom="46dp"
+        android:layout_width="169dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="36dp"
+        android:background="#2196F3"
         android:text="My Profile"
         app:layout_constraintBottom_toTopOf="@+id/button_professor_glassroom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button_professor_glassroom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginTop="251dp"
-        android:text="Booking Glassroom"
-        app:layout_constraintStart_toStartOf="@+id/button_professor_profile"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/button_professor_add_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="38dp"
+        android:layout_width="170dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="28dp"
+        android:background="#2196F3"
         android:text="my timetable"
+        app:layout_constraintEnd_toEndOf="@+id/button_professor_glassroom"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/button_professor_glassroom"
         app:layout_constraintTop_toBottomOf="@+id/button_professor_glassroom" />
 
     <Button
         android:id="@+id/button_professor_game"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="111dp"
+        android:layout_height="51dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginRight="39dp"
+        android:background="#2196F3"
         android:text="game"
         app:layout_constraintEnd_toEndOf="@+id/button_professor_add_time"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/button_professor_add_time"
         app:layout_constraintTop_toBottomOf="@+id/button_professor_add_time" />
+
+    <Button
+        android:id="@+id/button_professor_glassroom"
+        android:layout_width="168dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="272dp"
+        android:background="#2196F3"
+        android:text="Booking Glassroom"
+        app:layout_constraintEnd_toEndOf="@+id/button_professor_profile"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_professor_profile"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="373dp"
+        android:layout_height="87dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_professor_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.204"
+        app:srcCompat="@drawable/logo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

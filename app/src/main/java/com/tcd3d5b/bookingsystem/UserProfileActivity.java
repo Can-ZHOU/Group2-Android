@@ -1,9 +1,5 @@
 package com.tcd3d5b.bookingsystem;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,16 +9,22 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class UserProfileActivity extends AppCompatActivity {
     private static final String TAG = "UserProfileActivity";
     private TextView memail;
     ImageView mimage;
-    Button mbutton;
+    Button mbutton, resetpwd;
 
     private static final int IMAGE_PICK_CODE=1000;
     private static final int PERMISSION_CODE=1001;
@@ -37,11 +39,12 @@ public class UserProfileActivity extends AppCompatActivity {
         SharedPreferences mpreferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = mpreferences.edit();
 
-        String name = mpreferences.getString(getString(R.string.email),"");
+        final String name = mpreferences.getString(getString(R.string.email),"");
         memail.setText(name);
 
         mimage = findViewById(R.id.imageView5);
         mbutton=findViewById(R.id.imgbt);
+        resetpwd = findViewById(R.id.button_reset_pwd);
 
         mbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +69,22 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
 
+        resetpwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().sendPasswordResetEmail(name)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(getApplicationContext(), "Email sent.", Toast.LENGTH_LONG).show();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Please try again.", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+            }
+        });
 
     }
 

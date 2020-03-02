@@ -12,10 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MyTimetableActivity"></activity>
+        <activity android:name=".ConfirmationGlassroomActivity"></activity>
+        <activity android:name=".InActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MyTimetableActivity" />
         <activity android:name=".AddTimeableActivity" />
         <activity android:name=".ProfessorTimeConfirmActivity" />
-        <activity android:name=".AvailableGlassroomActivity" />
         <activity android:name=".ProfessorChoiceActivity" />
         <activity android:name=".ProfessorTimetableActivity" />
         <activity android:name=".game2048.easy" />
@@ -26,13 +33,7 @@
         <activity android:name=".ChoiceActivity" />
         <activity android:name=".BookingActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

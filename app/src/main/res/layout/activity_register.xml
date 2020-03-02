@@ -46,7 +46,6 @@
         android:layout_marginRight="161dp"
         android:layout_marginBottom="32dp"
         android:background="@color/custombackground"
-        android:text="@string/common_signin_button_text"
         android:text="Register"
         app:layout_constraintBottom_toTopOf="@+id/button_register_signIn"
         app:layout_constraintEnd_toEndOf="parent"

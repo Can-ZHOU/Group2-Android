@@ -5,6 +5,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
+
         applicationId "com.tcd3d5b.bookingsystem"
         minSdkVersion 15
         targetSdkVersion 29

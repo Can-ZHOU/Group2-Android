@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Group 2</string>
+    <string name="switch1">package com.tcd3d5b.bookingsystem.switch</string>
+    <string name="email">package com.tcd3d5b.bookingsystem.email</string>
+    <string name="password">package com.tcd3d5b.bookingsystem.password</string>
     <string name="no_move">no_move</string>
     <string name="victory">victory!</string>
     <string name="fail">fail!</string>

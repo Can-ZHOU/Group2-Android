@@ -6,9 +6,6 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColor">@color/custombackground</item>
-        <item name="android:background">@color/back</item>
-        <item name="android:button">@drawable/rounded_bt</item>
     </style>
 
 

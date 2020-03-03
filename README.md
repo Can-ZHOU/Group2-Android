@@ -33,13 +33,13 @@
 - Layout
 - Backend
   - :white_check_mark: Finish all basic functions: search professor's timetable, show professor valid time, let student can book specific valid time to meet professor. --> [Can]
-  - :computer: Check whether all inputs are valid.
+  - :computer: Check whether all inputs are valid. -->[Roham]
 
 ### Professor's Timetable (Professor version)
 - Layout
 - Backend
   - :white_check_mark: Finish all basic functions: show specific professor's timetable, show professor valid time, let student can book specific valid time to meet professor. --> [Can]
-  - :computer: Check whether all inputs are valid.
+  - :computer: Check whether all inputs are valid. -->[Roham]
  
 ### Booking Glassroom
 - Layout
@@ -50,4 +50,4 @@
 ### Game
 - Layout
 - Backend
-- :white_check_mark: Finished a simple game - 2048 --> [Can]
+  - :white_check_mark: Finished a simple game - 2048 --> [Can]

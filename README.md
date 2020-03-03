@@ -13,13 +13,16 @@
 **:white_check_mark: : Finished and Merged.   :computer: : TODO**
 ### Login/Register
 - Layout
+  - :computer: Working on app logo. --> [Ujjawal]
+  - :white_check_mark: Finish layout for login page and working on register page. --> [Ujjawal]
 - Backend
   - :white_check_mark: Connect to firebase database, achieved basic functions. --> [Can]
   - :white_check_mark: Check the validation of input email address. --> [Malay]
-  - :white_check_mark: Add remember me function. --> [Ujjawal]
+  - :white_check_mark: Add remember me function to store cookies internally. --> [Ujjawal]
 
 ### Profile
 - Layout 
+   - :white_check_mark: Finish layout for user profile. --> [Ujjawal]
 - Backend
   - :white_check_mark: Finish basic functions to show user profile. --> [Ujjawal]
   - :white_check_mark: Finish reset password function by using firebase email. --> [Can]
@@ -49,5 +52,6 @@
 
 ### Game
 - Layout
+   - :white_check_mark: Finished game choice page. --> [Ujjawal]
 - Backend
   - :white_check_mark: Finished a simple game - 2048 --> [Can]

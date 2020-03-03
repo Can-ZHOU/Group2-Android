@@ -17,18 +17,18 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText_add_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="188dp"
         android:ems="10"
         android:inputType="date"
-        app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
+        app:layout_constraintEnd_toEndOf="@+id/editText_add_time"
+        app:layout_constraintStart_toStartOf="@+id/editText_add_time"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editText_add_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="86dp"
@@ -37,7 +37,7 @@
         android:ems="10"
         android:inputType="time"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_add_date" />
 
     <TextView
         android:id="@+id/textView"
@@ -47,8 +47,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="30dp"
         android:text="date"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintStart_toStartOf="@+id/editText" />
+        app:layout_constraintBottom_toTopOf="@+id/editText_add_date"
+        app:layout_constraintStart_toStartOf="@+id/editText_add_date" />
 
     <TextView
         android:id="@+id/textView4"
@@ -58,6 +58,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="24dp"
         android:text="time"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2" />
+        app:layout_constraintBottom_toTopOf="@+id/editText_add_time"
+        app:layout_constraintStart_toStartOf="@+id/editText_add_time" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

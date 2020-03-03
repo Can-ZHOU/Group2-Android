@@ -8,21 +8,23 @@
     android:theme="@style/AppTheme">
 
     <EditText
+        android:id="@+id/book_glassroom_date"
         android:layout_width="211dp"
         android:layout_height="50dp"
-        android:id="@+id/book_glassroom_date"
         android:layout_marginTop="15dp"
         android:ems="10"
+        android:hint="YYYY-MM-DD"
         android:inputType="date"
         app:layout_constraintStart_toStartOf="@+id/textView_date"
         app:layout_constraintTop_toBottomOf="@+id/textView_date" />
 
     <EditText
+        android:id="@+id/book_glassroom_time"
         android:layout_width="211dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
-        android:id="@+id/book_glassroom_time"
         android:ems="10"
+        android:hint="HH:MM"
         android:inputType="time"
         app:layout_constraintStart_toStartOf="@+id/textView_time"
         app:layout_constraintTop_toBottomOf="@+id/textView_time" />

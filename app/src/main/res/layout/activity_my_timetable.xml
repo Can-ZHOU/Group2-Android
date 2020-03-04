@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="ADD New time"
+        android:text="ADD New TimeTable"
+        android:background="@drawable/rounded_bt"
         android:textSize="20dp" />
 
     <Button
@@ -20,6 +21,7 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:text="Back to home"
+        android:background="@drawable/rounded_bt"
         android:textSize="20dp" />
 
     <TextView
@@ -28,6 +30,8 @@
         android:layout_height="50dp"
         android:gravity="center"
         android:text="My Timetable"
+
+        android:textColor="#0E73B9"
         android:textSize="20dp" />
 
     <ListView

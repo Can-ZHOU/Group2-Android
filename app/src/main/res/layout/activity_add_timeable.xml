@@ -8,13 +8,18 @@
 
     <Button
         android:id="@+id/button_add_timetable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="173dp"
+        android:layout_width="125dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="168dp"
+        android:background="@drawable/rounded_bt"
         android:text="add"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_add_time"
+        app:layout_constraintVertical_bias="0.506" />
 
     <EditText
         android:id="@+id/editText_add_date"
@@ -46,7 +51,8 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="30dp"
-        android:text="date"
+        android:text=" DATE"
+        android:textColor="#0E73B9"
         app:layout_constraintBottom_toTopOf="@+id/editText_add_date"
         app:layout_constraintStart_toStartOf="@+id/editText_add_date" />
 
@@ -57,8 +63,23 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="24dp"
-        android:text="time"
+        android:text="TIME"
+        android:textColor="#0E73B9"
         app:layout_constraintBottom_toTopOf="@+id/editText_add_time"
         app:layout_constraintStart_toStartOf="@+id/editText_add_time" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="255dp"
+        android:layout_height="52dp"
+        android:text="Add Your TimeTable"
+        android:textColor="#0E73B9"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText_add_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.191" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

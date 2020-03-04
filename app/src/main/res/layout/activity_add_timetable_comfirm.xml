@@ -7,20 +7,24 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="174dp"
-        android:layout_marginEnd="119dp"
-        android:layout_marginRight="119dp"
-        android:text="Add Time Successfully"
+        android:layout_width="406dp"
+        android:layout_height="61dp"
+        android:text="ADDED TIMETABLE SUCCESSFULLY!!"
+        android:textColor="#0E73B9"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.122" />
 
     <Button
         android:id="@+id/button_add_confirm_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="323dp"
+        android:layout_width="135dp"
+        android:layout_height="73dp"
+        android:layout_marginBottom="136dp"
+        android:background="@drawable/rounded_bt"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

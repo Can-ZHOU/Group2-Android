@@ -38,9 +38,10 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="100dp"
         android:layout_marginRight="100dp"
-        android:background="#0e73b9"
+        android:background="@drawable/rounded_bt"
         android:text="Search"
         android:textColor="#ffffff"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/book_glassroom_time" />
@@ -52,8 +53,9 @@
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="180dp"
-        android:text="date"
+        android:text="Date"
         android:textColor="#0E73B9"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,24 +64,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="time"
+        android:text="Time"
         android:textColor="#0E73B9"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/book_glassroom_date"
         app:layout_constraintTop_toBottomOf="@+id/book_glassroom_date" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="211dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="78dp"
-        android:layout_marginLeft="78dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="328dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginLeft="82dp"
+        android:layout_marginTop="75dp"
         android:layout_marginEnd="76dp"
         android:layout_marginRight="76dp"
         android:text="Booking Glassroom"
         android:textColor="#0E73B9"
-        android:textSize="24sp"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="@+id/book_glassroom_date"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="@+id/textView_date"
         app:layout_constraintTop_toTopOf="parent" />
 

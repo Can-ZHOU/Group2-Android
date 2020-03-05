@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -62,7 +63,7 @@ public class MyTimetableActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 if( !dataSnapshot.exists() || !dataSnapshot.hasChildren()) {
-                    // TODO
+                    Toast.makeText(getApplicationContext(), "No slot available", Toast.LENGTH_LONG).show();
                 } else {
                     ListView lv = (ListView) findViewById(R.id.listView_mytimetable);
                     final ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();

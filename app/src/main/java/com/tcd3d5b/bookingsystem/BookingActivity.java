@@ -61,8 +61,7 @@ public class BookingActivity extends AppCompatActivity {
         final Query myQuery = DBref.child("glassroom").child("date").child(date_string).child(time_string);
 
         myQuery.addValueEventListener(new ValueEventListener() {
-            private int roomNumber;
-            private boolean flag = false;
+            private int roomNumber, flag = 0;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if( !dataSnapshot.exists() || !dataSnapshot.hasChildren()) {
@@ -76,11 +75,16 @@ public class BookingActivity extends AppCompatActivity {
                     }
                     roomNumber = roomList.size()+1;
                 }
-                if(roomNumber <= 9 && !flag){
-                    flag = true;
+                if(roomNumber <= 9 && flag == 0){
+                    flag = 1;
                     addRooom(date.getText().toString(), time.getText().toString(), Integer.toString(roomNumber));
-                    Toast.makeText(getApplicationContext(), "Confirmed: " + date.getText().toString()  + time.getText().toString() + "Room: " + (char) roomNumber, Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(BookingActivity.this, ConfirmationGlassroomActivity.class));
+                    Intent intent = new Intent(getApplicationContext(), ConfirmationGlassroomActivity.class);
+
+                    intent.putExtra("date_key", date.getText().toString());
+                    intent.putExtra("time_key", time.getText().toString());
+                    intent.putExtra("room_key", Integer.toString(roomNumber));
+
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "RoomError: Select another date", Toast.LENGTH_LONG).show();

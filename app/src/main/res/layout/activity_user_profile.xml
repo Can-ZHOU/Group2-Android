@@ -39,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_reset_pwd"
         android:layout_width="214dp"
         android:layout_height="58dp"
         android:background="@drawable/rounded_bt"
@@ -81,7 +81,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.186"
-        app:srcCompat="@drawable/tony" />
+        app:srcCompat="@drawable/surprised" />
 
     <Button
         android:id="@+id/imgbt"

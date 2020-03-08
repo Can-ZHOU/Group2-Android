@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,24 +18,24 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class MyTimetableActivity extends AppCompatActivity {
     TextView timetable;
     private DatabaseReference DBref;
-    Button add;
+    Button add, back;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_timetable);
 
-        timetable= findViewById(R.id.textView_my_timetable);
-
         search("p1");
 
         add = findViewById(R.id.button_add_my_timetable);
+        back = findViewById(R.id.button_my_timetable_back);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +44,12 @@ public class MyTimetableActivity extends AppCompatActivity {
             }
         });
 
-
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MyTimetableActivity.this, ProfessorChoiceActivity.class));
+            }
+        });
     }
 
     private void search(String professor) {
@@ -56,24 +63,23 @@ public class MyTimetableActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 if( !dataSnapshot.exists() || !dataSnapshot.hasChildren()) {
-                    // TODO
+                    Toast.makeText(getApplicationContext(), "No slot available", Toast.LENGTH_LONG).show();
                 } else {
+                    ListView lv = (ListView) findViewById(R.id.listView_mytimetable);
+                    final ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
                     String result = "";
-                    Map<String, String> map = new HashMap<>();
                     for(DataSnapshot child : dataSnapshot.getChildren()) {
-                        result += "\r\n" + child.getKey().toString();
                         for(DataSnapshot time : child.getChildren()) {
-                            map.put(time.getKey().toString(),time.getValue().toString());
+                            HashMap<String, Object> map = new HashMap<String, Object>();
+                            map.put("ItemTitle", " Time: " + child.getKey() + "  " + time.getKey());
+                            map.put("ItemText", " Status: " + time.getValue());
+                            listItem.add(map);
                             Log.i(TAG, "onDataChange:timetable : " + time.getKey().toString() + "  " +time.getValue().toString());
                         }
                     }
 
-                    for (String k : map.keySet()) {
-                        result += "\r\n" + k + " : " + map.get(k);
-                    }
-
-                    TextView tv = findViewById(R.id.textView_my_timetable);
-                    tv.setText(result);
+                    MyAdapter adapter = new MyAdapter(MyTimetableActivity.this, listItem);
+                    lv.setAdapter(adapter);
 
                 }
             }

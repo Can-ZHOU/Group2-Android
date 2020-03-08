@@ -1,5 +1,6 @@
 package com.tcd3d5b.bookingsystem;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,10 +32,12 @@ public class ProfessorTimeConfirmActivity extends AppCompatActivity {
         ArrayList list = bundle.getParcelableArrayList("timetable");
         List<Map<String, Object>> lists= (List<Map<String, Object>>)list.get(0);
 
+        Intent intent = getIntent();
+
         lv = (ListView) findViewById(R.id.listView1);
         final ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
         TextView tv = findViewById(R.id.header_date);
-        tv.setText("2020-02-26");
+        tv.setText(intent.getStringExtra("pdate_key"));
 
         for (Map<String, Object> m : lists) {
             for (String k : m.keySet()) {

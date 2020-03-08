@@ -5,11 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class AddTimeableActivity extends AppCompatActivity {
     private TextView date, time;
@@ -29,9 +34,43 @@ public class AddTimeableActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mDatabase = FirebaseDatabase.getInstance().getReference();
+                if (checkValid(date.getText().toString())) {
+                    if (time.getText().toString().matches("(1[0-9]|2[0-1]):(00)")) {
                 String professor = "p1";
                 mDatabase.child("professor").child(professor).child("timetable").child(date.getText().toString()).child(time.getText().toString()).setValue("valid");
                 startActivity(new Intent(AddTimeableActivity.this, AddTimetableComfirmActivity.class));
+                    }
+                    else
+                        Toast.makeText(getApplicationContext(), "TimeFormatError: Use {HH:mm} Format", Toast.LENGTH_LONG).show();
+                }else
+                    Toast.makeText(getApplicationContext(), "DateFormatError: Use {20YY-MM-DD} Format", Toast.LENGTH_LONG).show();
+            }
+            public boolean checkValid(String strDate)
+            {
+                /* Check if date is 'null' */
+                if (strDate.trim().equals(""))
+                {
+                    return true;
+                }
+                /* Date is not 'null' */
+                else
+                {
+                    SimpleDateFormat strdate = new SimpleDateFormat("yyyy-MM-dd");
+                    strdate.setLenient(false);
+                    try
+                    {
+                        Date javaDate = strdate.parse(strDate);
+                        System.out.println(strDate+" is valid date format");
+                    }
+                    /* Date format is invalid */
+                    catch (ParseException e)
+                    {
+                        System.out.println(strDate+" is Invalid Date format");
+                        return false;
+                    }
+                    /* Return true if date format is valid */
+                    return true;
+                }
             }
         });
     }

@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     Switch mswitch;
     FirebaseAuth.AuthStateListener myAuthListener;
     private SharedPreferences mpreferences;
+    static final String myprefs = "myprefs";
     private SharedPreferences.Editor meditor;
 
     @Override
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         studentSignIn = findViewById(R.id.button_login_signIn);
         professorSignIn = findViewById(R.id.button_login__professor);
         mswitch = findViewById(R.id.switch1);
-        mpreferences =PreferenceManager.getDefaultSharedPreferences(this);
+        mpreferences =getSharedPreferences("myprefs",MODE_PRIVATE);
         meditor = mpreferences.edit();
 
         checksharedprefernces();
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                  meditor.commit();
 
                  String name = email.getText().toString();
-                 meditor.putString(getString(R.string.email),"");
+                 meditor.putString(getString(R.string.email),name);
                  meditor.commit();
 
                  String password = pwd.getText().toString();
@@ -132,6 +133,30 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                     });
+                }
+                if (mswitch.isChecked()){
+                    meditor.putString(getString(R.string.switch1),"True");
+                    meditor.commit();
+
+                    String name = email.getText().toString();
+                    meditor.putString(getString(R.string.email),name);
+                    meditor.commit();
+
+                    String password = pwd.getText().toString();
+                    meditor.putString(getString(R.string.password),password);
+                    meditor.commit();
+                }else{
+                    meditor.putString(getString(R.string.switch1),"False");
+                    meditor.commit();
+
+                    String name = email.getText().toString();
+                    meditor.putString(getString(R.string.email),name);
+                    meditor.commit();
+
+                    String password = pwd.getText().toString();
+                    meditor.putString(getString(R.string.password),"");
+                    meditor.commit();
+
                 }
 
             }

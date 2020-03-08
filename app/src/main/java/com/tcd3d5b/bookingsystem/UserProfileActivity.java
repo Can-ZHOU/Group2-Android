@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -24,7 +24,10 @@ public class UserProfileActivity extends AppCompatActivity {
     private static final String TAG = "UserProfileActivity";
     private TextView memail;
     ImageView mimage;
+
+    static final String myprefs = "myprefs";
     Button mbutton, resetpwd;
+
 
     private static final int IMAGE_PICK_CODE=1000;
     private static final int PERMISSION_CODE=1001;
@@ -36,7 +39,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
             memail =(TextView) findViewById(R.id.showemail);
 
-        SharedPreferences mpreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences mpreferences = getSharedPreferences(myprefs,MODE_PRIVATE);
         SharedPreferences.Editor editor = mpreferences.edit();
 
         final String name = mpreferences.getString(getString(R.string.email),"");

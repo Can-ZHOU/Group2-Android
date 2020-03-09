@@ -10,18 +10,20 @@
         android:id="@+id/button_add_my_timetable"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@drawable/rounded_bt"
         android:gravity="center"
         android:text="ADD New TimeTable"
-        android:background="@drawable/rounded_bt"
+        android:textColor="#FFFFFF"
         android:textSize="20dp" />
 
     <Button
         android:id="@+id/button_my_timetable_back"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@drawable/rounded_bt"
         android:gravity="center"
         android:text="Back to home"
-        android:background="@drawable/rounded_bt"
+        android:textColor="#FFFFFF"
         android:textSize="20dp" />
 
     <TextView

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".MainActivity"
     android:orientation="vertical">
 
@@ -18,6 +19,9 @@
         android:text="app Name"
         android:textColor="#FFFFFF"
         android:textSize="32sp" />
+=======
+    tools:context=".MainActivity">
+>>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
 
 
     <EditText
@@ -83,9 +87,12 @@
         android:background="@drawable/rounded_bt"
         android:text="Professor Sign In"
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:textAlignment="center"
         android:textColor="#FFFFFF" />
 =======
+=======
+>>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -94,6 +101,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.688" />
+<<<<<<< HEAD
 
     <TextView
         android:id="@+id/textView8"
@@ -111,6 +119,25 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
         app:layout_constraintVertical_bias="0.005" />
 
+=======
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="314dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="14dp"
+        android:text="   Lets Get Started"
+        android:textColor="#0E73B9"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/email_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.005" />
+
+>>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="379dp"
@@ -120,6 +147,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+<<<<<<< HEAD
+>>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
+=======
 >>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
 
     <Switch

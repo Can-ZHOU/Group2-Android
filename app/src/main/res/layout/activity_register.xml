@@ -1,109 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/back"
     tools:context=".RegisterActivity"
-    android:theme="@style/AppTheme">
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Let's sign you up!" />
 
     <EditText
         android:id="@+id/email_register"
-
-        android:layout_width="236dp"
-        android:layout_height="42dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd  = "32dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="Enter your TCD Email ID"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.255" />
+        android:hint="Email"
+        android:layout_gravity="center_horizontal"
+         />
 
     <EditText
         android:id="@+id/pwd_register"
-        android:layout_width="236dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
         android:ems="10"
-        android:hint="Enter your Password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/email_register"
-        app:layout_constraintTop_toBottomOf="@+id/email_register"
-        app:layout_constraintVertical_bias="0.054" />
+        android:hint="Password"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/button_register_register"
-        android:layout_width="214dp"
-        android:layout_height="58dp"
-        android:background="@drawable/rounded_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="48dp"
         android:text="Register"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        android:layout_gravity="center_horizontal"
+     />
 
     <Button
         android:id="@+id/button_register_signIn"
-        android:layout_width="214dp"
-        android:layout_height="58dp"
-        android:background="@drawable/rounded_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginTop="48dp"
+
         android:text="Sign In"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.631" />
+        android:layout_gravity="center_horizontal"
+         />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="280dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="24dp"
-        android:text="Lets Sign You Up"
-        android:textColor="#0E73B9"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="161dp"
-        android:layout_marginBottom="12dp"
-        android:text="Username"
-        app:layout_constraintBottom_toTopOf="@+id/email_register"
-        app:layout_constraintStart_toStartOf="@+id/email_register"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:text="Password"
-        app:layout_constraintBottom_toTopOf="@+id/pwd_register"
-        app:layout_constraintStart_toStartOf="@+id/pwd_register"
-        app:layout_constraintTop_toBottomOf="@+id/email_register" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

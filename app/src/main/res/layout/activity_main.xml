@@ -8,56 +8,113 @@
 
     <EditText
         android:id="@+id/email_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="49dp"
+        android:layout_width="219dp"
+        android:layout_height="41dp"
         android:ems="10"
+        android:hint="Email Id"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/pwd_login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.334" />
 
     <EditText
         android:id="@+id/pwd_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_width="219dp"
+        android:layout_height="41dp"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/button_login_signIn"
-        app:layout_constraintStart_toStartOf="@+id/email_login" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.408" />
 
     <Button
         android:id="@+id/button_login_signIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="19dp"
-        android:layout_marginRight="19dp"
-        android:layout_marginBottom="27dp"
+        android:layout_width="212dp"
+        android:layout_height="70dp"
+        android:background="@drawable/rounded_bt"
         android:text="Student Sign in"
-        app:layout_constraintBottom_toTopOf="@+id/button_login__professor"
-        app:layout_constraintEnd_toEndOf="@+id/button_login__professor" />
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
 
     <Button
         android:id="@+id/button_login_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginLeft="136dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="212dp"
+        android:layout_height="70dp"
+        android:background="@drawable/rounded_bt"
         android:text="Register"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_login__professor" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.833" />
 
     <Button
         android:id="@+id/button_login__professor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginBottom="224dp"
+        android:layout_width="212dp"
+        android:layout_height="70dp"
+        android:background="@drawable/rounded_bt"
         android:text="Professor Sign In"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/button_login_register" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.688" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="314dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="14dp"
+        android:text="   Lets Get Started"
+        android:textColor="#0E73B9"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/email_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.005" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="379dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="187dp"
+        android:layout_height="51dp"
+        android:text="Remember Me"
+        android:textColor="#0E73B9"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.957" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

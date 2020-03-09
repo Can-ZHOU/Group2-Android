@@ -30,6 +30,7 @@ public class ProfessorTimeConfirmActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         ArrayList list = bundle.getParcelableArrayList("timetable");
+        final String chosenDate = bundle.getString("chosenDate");
         List<Map<String, Object>> lists= (List<Map<String, Object>>)list.get(0);
 
         Intent intent = getIntent();
@@ -37,7 +38,7 @@ public class ProfessorTimeConfirmActivity extends AppCompatActivity {
         lv = (ListView) findViewById(R.id.listView1);
         final ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
         TextView tv = findViewById(R.id.header_date);
-        tv.setText(intent.getStringExtra("pdate_key"));
+        tv.setText(chosenDate);
 
         for (Map<String, Object> m : lists) {
             for (String k : m.keySet()) {
@@ -59,7 +60,7 @@ public class ProfessorTimeConfirmActivity extends AppCompatActivity {
                 mDatabase = FirebaseDatabase.getInstance().getReference();
                 HashMap<String, Object> map = listItem.get(arg2);
                 String professor = "p1";
-                String date = "2020-02-26";
+                String date = chosenDate;
                 String time = map.get("ItemTitle").toString().substring(7);
                 mDatabase.child("professor").child(professor).child("timetable").child(date).child(time).setValue("booked");
                 //startActivity(new Intent(ProfessorTimeConfirmActivity.this, BookedTimeConfirmActivity.class));

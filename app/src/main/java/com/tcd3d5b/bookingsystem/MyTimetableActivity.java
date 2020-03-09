@@ -1,7 +1,9 @@
 package com.tcd3d5b.bookingsystem;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class MyTimetableActivity extends AppCompatActivity {
+    private static final String TAG = "professorEmail";
     TextView timetable;
     private DatabaseReference DBref;
     Button add, back;
@@ -32,7 +35,18 @@ public class MyTimetableActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_timetable);
 
-        search("p1");
+        SharedPreferences mpreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = mpreferences.edit();
+
+        final String professorEmail = mpreferences.getString(getString(R.string.email),"");
+
+        Log.i(TAG, "onCreate: professorEmail: "+professorEmail);
+
+        if(professorEmail.equals("professor1@tcd.ie")) {
+            search("p1");
+        } else {
+            search("p2");
+        }
 
         add = findViewById(R.id.button_add_my_timetable);
         back = findViewById(R.id.button_my_timetable_back);

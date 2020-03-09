@@ -83,6 +83,7 @@ public class ProfessorTimetableActivity extends AppCompatActivity {
                     ArrayList bundlelist = new ArrayList();
                     bundlelist.add(timetable);
                     bundle.putParcelableArrayList("timetable",bundlelist);
+                    bundle.putString("chosenDate",date);
                     intent.putExtras(bundle);
                     startActivity(intent);
                 }

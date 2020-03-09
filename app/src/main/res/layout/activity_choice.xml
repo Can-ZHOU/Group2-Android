@@ -7,6 +7,8 @@
     tools:context=".ChoiceActivity">
 
 
+
+
     <Button
         android:id="@+id/button_profile"
         android:layout_width="212dp"

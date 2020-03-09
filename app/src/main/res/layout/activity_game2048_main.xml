@@ -73,20 +73,20 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="379dp"
-            android:layout_height="130dp"
-            android:text="Please select the grid you want to play"
+            android:layout_width="414dp"
+            android:layout_height="73dp"
             android:elevation="5pt"
+            android:text="Please select the grid "
             android:textColor="#0E73B9"
-            android:textSize="48sp"
+            android:textSize="39sp"
             android:textStyle="bold"
-            app:fontFamily="cursive"
+            app:fontFamily="casual"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.875"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.026" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -101,7 +101,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.31"
-            app:srcCompat="@drawable/neutral" />
+            app:srcCompat="@drawable/easy" />
 
         <ImageView
             android:id="@+id/imageView3"
@@ -116,7 +116,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.544"
-            app:srcCompat="@drawable/neutral" />
+            app:srcCompat="@drawable/standard" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -129,7 +129,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.797"
-            app:srcCompat="@drawable/surprised" />
+            app:srcCompat="@drawable/hard" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="337dp"
+            android:layout_height="63dp"
+            android:text="you want to play"
+            android:textColor="#0E73B9"
+            android:textSize="39sp"
+            android:textStyle="bold"
+            app:fontFamily="casual"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintVertical_bias="0.013" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

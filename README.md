@@ -9,6 +9,12 @@
 - Ujjawal
 - Vishant
 ## About
+- An App to make your life at Trinity College Dublin easier!
+- Main Features (so far)
+  - :white_check_mark: Sign up and create your profile
+  - :white_check_mark: Book scss glassrooms through an online booking system
+  - :white_check_mark: Meet up with your professors by booking appointments into their timetables
+  - :white_check_mark: An added game for extra fun :)
 ## App structure 
 **:white_check_mark: : Finished and Merged.   :computer: : TODO**
 ### Login/Register

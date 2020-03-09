@@ -22,6 +22,7 @@
 
     <EditText
         android:id="@+id/email_login"
+
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="48dp"
@@ -95,5 +96,20 @@
         android:textColor="#FFFFFF" />
 
 
+
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="187dp"
+        android:layout_height="51dp"
+        android:text="Remember Me"
+        android:textColor="#0E73B9"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.957" />
 
 </LinearLayout>

@@ -8,21 +8,25 @@
 
     <Button
         android:id="@+id/button_professor_01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_width="137dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:background="@drawable/rounded_bt"
         android:text="Professor xx01"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/professor_date"
         app:layout_constraintTop_toBottomOf="@+id/professor_date" />
 
     <Button
         android:id="@+id/button_professor_02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="141dp"
+        android:layout_height="63dp"
         android:layout_marginTop="43dp"
+        android:background="@drawable/rounded_bt"
         android:text="Professor xx02"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="@+id/button_professor_01"
         app:layout_constraintTop_toBottomOf="@+id/button_professor_01" />
 
@@ -45,7 +49,21 @@
         android:layout_marginStart="95dp"
         android:layout_marginLeft="95dp"
         android:layout_marginTop="148dp"
-        android:text="Date"
+        android:text=" DATE"
+        android:textColor="#0E73B9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="275dp"
+        android:layout_height="52dp"
+        android:text="   Professor's TimeTable"
+        android:textColor="#0E73B9"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/professor_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.251" />
 </androidx.constraintlayout.widget.ConstraintLayout>

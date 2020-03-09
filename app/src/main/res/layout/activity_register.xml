@@ -23,6 +23,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginBottom="24dp"
         android:ems="10"
+        android:hint="Enter your TCD Email ID"
         android:inputType="textEmailAddress"
         android:hint="Email"
         android:layout_gravity="center_horizontal"
@@ -61,7 +62,6 @@
         android:text="Sign In"
         android:layout_gravity="center_horizontal"
          />
-
 
 
 </LinearLayout>

@@ -14,6 +14,7 @@
         android:background="@drawable/rounded_bt"
         android:text="add"
 
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.464"

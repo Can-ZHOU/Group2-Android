@@ -9,50 +9,56 @@
 
     <Button
         android:id="@+id/button_profile"
-        android:layout_width="412dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_width="212dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="300dp"
+        android:background="@drawable/rounded_bt"
         android:text="My Profile"
-        android:background="#0072bb"
         android:textColor="#ffffff"
-        app:layout_constraintBottom_toTopOf="@+id/button_booking"
-        app:layout_constraintStart_toStartOf="@+id/button_booking" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
 
     <Button
         android:id="@+id/button_booking"
-        android:layout_width="412dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="94dp"
-        android:text="Booking Glassroom"
-
-        android:background="#0072bb"
+        android:layout_width="212dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/rounded_bt"
+        android:text="Glassroom Booking"
         android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
 
 
     <Button
         android:id="@+id/button_professor_timetable"
-        android:layout_width="412dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="professor timetable"
-        android:background="#0072bb"
+        android:layout_width="212dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_bt"
+        android:text="Professors Timetable"
         android:textColor="#ffffff"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/button_booking"
         app:layout_constraintTop_toBottomOf="@+id/button_booking" />
 
     <Button
         android:id="@+id/button_game"
-        android:layout_width="412dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="212dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
         android:text="Game"
-        android:background="#0072bb"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_bt"
         android:textColor="#ffffff"
         app:layout_constraintStart_toStartOf="@+id/button_professor_timetable"
         app:layout_constraintTop_toBottomOf="@+id/button_professor_timetable" />
@@ -63,6 +69,6 @@
         android:layout_height="110dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/Trinity_Main_Logo" />
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,49 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfessorChoiceActivity">
+    tools:context=".ChoiceActivity">
+
 
     <Button
-        android:id="@+id/button_professor_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="134dp"
-        android:layout_marginLeft="134dp"
-        android:layout_marginBottom="46dp"
+        android:id="@+id/button_professor_profile"        android:layout_width="212dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="300dp"
+        android:background="@drawable/rounded_bt"
         android:text="My Profile"
-        app:layout_constraintBottom_toTopOf="@+id/button_professor_glassroom"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
 
     <Button
-        android:id="@+id/button_professor_glassroom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginTop="251dp"
-        android:text="Booking Glassroom"
-        app:layout_constraintStart_toStartOf="@+id/button_professor_profile"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/button_professor_glassroom"        android:layout_width="212dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/rounded_bt"
+        android:text="Glassroom Booking"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
+
 
     <Button
-        android:id="@+id/button_professor_add_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="38dp"
-        android:text="my timetable"
-        app:layout_constraintStart_toStartOf="@+id/button_professor_glassroom"
-        app:layout_constraintTop_toBottomOf="@+id/button_professor_glassroom" />
+        android:id="@+id/button_professor_add_time"        android:layout_width="212dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_bt"
+        android:text="Professors Timetable"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/button_booking"
+        app:layout_constraintTop_toBottomOf="@+id/button_booking" />
 
     <Button
-        android:id="@+id/button_professor_game"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginRight="39dp"
-        android:text="game"
-        app:layout_constraintEnd_toEndOf="@+id/button_professor_add_time"
-        app:layout_constraintTop_toBottomOf="@+id/button_professor_add_time" />
+        android:id="@+id/button_professor_game"        android:layout_width="212dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:text="Game"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_bt"
+        android:textColor="#ffffff"
+        app:layout_constraintStart_toStartOf="@+id/button_professor_timetable"
+        app:layout_constraintTop_toBottomOf="@+id/button_professor_timetable" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="400dp"
+        android:layout_height="110dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="48dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="<app Name>"
+        android:text="app Name"
         android:textColor="#FFFFFF"
         android:textSize="32sp" />
 
@@ -94,9 +94,6 @@
         android:text="Professor Sign In"
         android:textAlignment="center"
         android:textColor="#FFFFFF" />
-
-
-
 
     <Switch
         android:id="@+id/switch1"

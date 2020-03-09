@@ -1,11 +1,11 @@
 package com.tcd3d5b.bookingsystem;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.tcd3d5b.bookingsystem.game2048.Game2048MainActivity;
 
@@ -39,7 +39,7 @@ public class ProfessorChoiceActivity extends AppCompatActivity {
         professorTimetable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfessorChoiceActivity.this, ProfessorTimetableActivity.class));
+                startActivity(new Intent(ProfessorChoiceActivity.this, MyTimetableActivity.class));
             }
         });
 

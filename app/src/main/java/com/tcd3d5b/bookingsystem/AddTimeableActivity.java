@@ -1,6 +1,7 @@
 package com.tcd3d5b.bookingsystem;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class AddTimeableActivity extends AppCompatActivity {
     private TextView date, time;
     private Button add;
     private DatabaseReference mDatabase;
+    static final String myprefs = "myprefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +32,23 @@ public class AddTimeableActivity extends AppCompatActivity {
         time = findViewById(R.id.editText_add_time);
         add = findViewById(R.id.button_add_timetable);
 
+        SharedPreferences mpreferences = getSharedPreferences(myprefs,MODE_PRIVATE);
+        SharedPreferences.Editor editor = mpreferences.edit();
+
+        final String professorEmail = mpreferences.getString(getString(R.string.email),"");
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDatabase = FirebaseDatabase.getInstance().getReference();
                 if (checkValid(date.getText().toString())) {
                     if (time.getText().toString().matches("(1[0-9]|2[0-1]):(00)")) {
-                String professor = "p1";
+                        String professor;
+                        if(professorEmail.equals("professor1@tcd.ie")) {
+                            professor = "p1";
+                        } else {
+                            professor = "p2";
+                        }
                 mDatabase.child("professor").child(professor).child("timetable").child(date.getText().toString()).child(time.getText().toString()).setValue("valid");
                 startActivity(new Intent(AddTimeableActivity.this, AddTimetableComfirmActivity.class));
                     }

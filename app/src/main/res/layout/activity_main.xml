@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 <<<<<<< HEAD
+<<<<<<< HEAD
     tools:context=".MainActivity"
     android:orientation="vertical">
 
@@ -23,6 +24,9 @@
     tools:context=".MainActivity">
 >>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
 
+=======
+    tools:context=".MainActivity">
+>>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
 
     <EditText
         android:id="@+id/email_login"
@@ -88,9 +92,12 @@
         android:text="Professor Sign In"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:textAlignment="center"
         android:textColor="#FFFFFF" />
 =======
+=======
+>>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
 =======
 >>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
         android:textColor="#FFFFFF"
@@ -102,6 +109,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.688" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <TextView
         android:id="@+id/textView8"
@@ -120,6 +128,8 @@
         app:layout_constraintVertical_bias="0.005" />
 
 =======
+=======
+>>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
 
     <TextView
         android:id="@+id/textView8"
@@ -137,6 +147,9 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
         app:layout_constraintVertical_bias="0.005" />
 
+<<<<<<< HEAD
+>>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
+=======
 >>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
     <ImageView
         android:id="@+id/imageView6"
@@ -148,6 +161,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
+=======
 >>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom
 =======
 >>>>>>> parent of c40b671... Merge pull request #32 from Can-ZHOU/Tom

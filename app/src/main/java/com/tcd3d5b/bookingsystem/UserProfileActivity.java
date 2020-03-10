@@ -95,7 +95,6 @@ public class UserProfileActivity extends AppCompatActivity {
         Intent intent = new Intent((Intent.ACTION_PICK));
         intent.setType("image/*");
         startActivityForResult(intent,IMAGE_PICK_CODE);
-
     }
 
     @Override

@@ -6,36 +6,64 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Username"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.288" />
+
+    <TextView
+        android:id="@+id/textView78"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.433" />
+
     <EditText
         android:id="@+id/email_login"
         android:layout_width="219dp"
-        android:layout_height="41dp"
+        android:layout_height="50dip"
+        android:background="@drawable/editextbackground"
         android:ems="10"
-        android:hint="Email Id"
+        android:hint=" Enter your TCD Email ID"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.304" />
+        app:layout_constraintVertical_bias="0.336" />
 
     <EditText
         android:id="@+id/pwd_login"
         android:layout_width="219dp"
-        android:layout_height="41dp"
+        android:layout_height="50dip"
+        android:background="@drawable/editextbackground"
         android:ems="10"
-        android:hint="Password"
+        android:hint=" Enter your Password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <Button
         android:id="@+id/button_login_signIn"
         android:layout_width="212dp"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="@drawable/rounded_bt"
         android:text="Student Sign in"
         android:textColor="#FFFFFF"
@@ -45,17 +73,17 @@
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.543" />
+        app:layout_constraintVertical_bias="0.641" />
 
     <Button
         android:id="@+id/button_login_register"
         android:layout_width="212dp"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="@drawable/rounded_bt"
+        android:gravity="center"
         android:text="Register"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
@@ -66,7 +94,7 @@
     <Button
         android:id="@+id/button_login__professor"
         android:layout_width="212dp"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="@drawable/rounded_bt"
         android:text="Professor Sign In"
         android:textColor="#FFFFFF"
@@ -76,22 +104,23 @@
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.688" />
+        app:layout_constraintVertical_bias="0.735" />
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="314dp"
-        android:layout_height="59dp"
-        android:layout_marginBottom="68dp"
+        android:layout_width="203dp"
+        android:layout_height="65dp"
         android:gravity="center_horizontal"
-        android:text="Welcome to T Life"
+        android:text="TLife"
         android:textColor="#0E73B9"
-        android:textSize="36sp"
+        android:textSize="55sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/email_login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.605"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.156" />
 
     <Switch
         android:id="@+id/switch1"
@@ -102,9 +131,20 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.913" />
+        app:layout_constraintVertical_bias="0.932" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="73dp"
+        android:layout_height="71dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.254"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.157"
+        app:srcCompat="@drawable/logo_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

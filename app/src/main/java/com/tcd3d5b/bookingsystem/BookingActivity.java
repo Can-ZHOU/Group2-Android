@@ -1,12 +1,15 @@
 package com.tcd3d5b.bookingsystem;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +23,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+
+import static com.tcd3d5b.bookingsystem.R.style.myTimePickerStyle;
 
 
 public class BookingActivity extends AppCompatActivity {
@@ -35,22 +41,48 @@ public class BookingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
 
+
         date = findViewById(R.id.book_glassroom_date);
         time = findViewById(R.id.book_glassroom_time);
         search = findViewById(R.id.button_book_glassroom_search);
 
+
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                new DatePickerDialog(BookingActivity.this, R.style.DialogTheme, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        date.setText(year+"-"+(monthOfYear+1)+"-"+dayOfMonth);
+                    }
+                }, 2020, 02, 10).show();
+            }
+        });
+
+        time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TimePickerDialog picker;
+                final Calendar cldr = Calendar.getInstance();
+                int hour = cldr.get(Calendar.HOUR_OF_DAY);
+                int minutes = cldr.get(Calendar.MINUTE);
+                // time picker dialog
+                picker = new TimePickerDialog(BookingActivity.this,
+                        myTimePickerStyle,
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker tp, int sHour, int sMinute) {
+                                time.setText(sHour + ":" + sMinute);
+                            }
+                        }, hour, minutes, true);
+                picker.show();
+            }
+        });
+
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Check Formatting for Date & Time
-                if (checkValid(date.getText().toString())) {
-                    if (time.getText().toString().matches("(1[0-9]|2[0-1]):(00)")) {
-                        search(date.getText().toString(), time.getText().toString());
-                    } else
-                        Toast.makeText(getApplicationContext(), "TimeFormatError: Use {XX:00} Format", Toast.LENGTH_LONG).show();
-                }
-                else
-                    Toast.makeText(getApplicationContext(), "DateFormatError: Use {20YY-MM-DD} Format", Toast.LENGTH_LONG).show();
+                search(date.getText().toString(), time.getText().toString());
             }
         });
     }
@@ -87,7 +119,7 @@ public class BookingActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), "RoomError: Select another date", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "RoomError: Select another date", Toast.LENGTH_LONG).show();
                 }
             }
 

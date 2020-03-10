@@ -8,37 +8,42 @@
 
     <Button
         android:id="@+id/button_professor_01"
-        android:layout_width="137dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_width="0dp"
+
+        android:layout_height="50dp"
+        android:layout_marginBottom="13dp"
         android:background="@drawable/rounded_bt"
-        android:text="Professor xx01"
+        android:text="Professor 01"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/professor_date"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button_professor_02"
+        app:layout_constraintEnd_toEndOf="@+id/button_professor_02"
+        app:layout_constraintStart_toStartOf="@+id/button_professor_02"
         app:layout_constraintTop_toBottomOf="@+id/professor_date" />
 
     <Button
         android:id="@+id/button_professor_02"
-        android:layout_width="141dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="43dp"
+        android:layout_width="211dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="231dp"
         android:background="@drawable/rounded_bt"
-        android:text="Professor xx02"
+        android:text="Professor 02"
         android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/button_professor_01"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_professor_01" />
 
     <EditText
         android:id="@+id/professor_date"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="29dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="85dp"
+        android:background="@drawable/editextbackground"
         android:ems="10"
         android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/button_professor_01"
         app:layout_constraintStart_toStartOf="@+id/textView_professor_date"
         app:layout_constraintTop_toBottomOf="@+id/textView_professor_date" />
 
@@ -46,24 +51,28 @@
         android:id="@+id/textView_professor_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginLeft="95dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
         android:text=" DATE"
         android:textColor="#0E73B9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/professor_date"
+        app:layout_constraintStart_toStartOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <TextView
         android:id="@+id/textView14"
-        android:layout_width="275dp"
-        android:layout_height="52dp"
+        android:layout_width="341dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="56dp"
         android:text="   Professor's TimeTable"
         android:textColor="#0E73B9"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/professor_date"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView_professor_date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.251" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

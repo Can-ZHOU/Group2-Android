@@ -7,15 +7,16 @@
     tools:context=".ChoiceActivity">
 
 
-
     <Button
-        android:id="@+id/button_professor_profile"        android:layout_width="212dp"
+        android:id="@+id/button_professor_profile"
+        android:layout_width="212dp"
         android:layout_height="70dp"
         android:layout_marginBottom="300dp"
         android:background="@drawable/rounded_bt"
         android:text="My Profile"
         android:textColor="#ffffff"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
@@ -23,20 +24,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.543" />
 
+
     <Button
-        android:id="@+id/button_professor_glassroom"        android:layout_width="212dp"
+        android:id="@+id/button_professor_glassroom"
+        android:layout_width="212dp"
         android:layout_height="70dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/rounded_bt"
         android:text="Glassroom Booking"
         android:textColor="#ffffff"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.543" />
-
+        app:layout_constraintVertical_bias="0.534" />
 
     <Button
         android:id="@+id/button_professor_add_time"
@@ -47,6 +51,7 @@
         android:text="My Timetable"
         android:textColor="#ffffff"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,12 +69,13 @@
         android:text="Game"
         android:textColor="#ffffff"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.335"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
+        app:layout_constraintVertical_bias="0.72" />
 
     <ImageView
         android:id="@+id/imageView"

@@ -1,10 +1,12 @@
 package com.tcd3d5b.bookingsystem;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -36,9 +38,20 @@ public class ProfessorTimetableActivity extends AppCompatActivity {
         setContentView(R.layout.activity_professor_timetable);
 
         date = findViewById(R.id.professor_date);
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                new DatePickerDialog(ProfessorTimetableActivity.this, R.style.DialogTheme, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        date.setText(year+"-"+(monthOfYear+1)+"-"+dayOfMonth);
+                    }
+                }, 2020, 02, 10).show();
+            }
+        });
         professor01 = findViewById(R.id.button_professor_01);
         professor02 = findViewById(R.id.button_professor_02);
-            if (checkValid(date.getText().toString())) {
+
             professor01.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -52,14 +65,14 @@ public class ProfessorTimetableActivity extends AppCompatActivity {
                     search("p2", date.getText().toString());
                 }
             });
-        }
     }
 
-    private void search(String professor, final String date) {
+    private void search(final String professor, final String date) {
         DBref = FirebaseDatabase.getInstance().getReference();
         final Query myQuery = DBref.child("professor").child(professor).child("timetable").child(date);
 
         myQuery.addValueEventListener(new ValueEventListener() {
+            private static final String TAG2 = "TAG2";
             private static final String TAG = "Professor";
 
             @Override
@@ -78,12 +91,11 @@ public class ProfessorTimetableActivity extends AppCompatActivity {
 
                     Intent intent = new Intent();
                     intent.setClass(ProfessorTimetableActivity.this,ProfessorTimeConfirmActivity.class);
-                    intent.putExtra("pdate_key", date);
                     Bundle bundle = new Bundle();
                     ArrayList bundlelist = new ArrayList();
                     bundlelist.add(timetable);
                     bundle.putParcelableArrayList("timetable",bundlelist);
-                    bundle.putString("chosenDate",date);
+                    bundle.putString("chosenDate",professor+"/"+date);
                     intent.putExtras(bundle);
                     startActivity(intent);
                 }

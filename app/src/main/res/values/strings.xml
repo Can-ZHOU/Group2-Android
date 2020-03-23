@@ -1,16 +1,6 @@
 <resources>
-    <string name="app_name">Group 2</string>
-    <string name="switch1">package com.tcd3d5b.bookingsystem.switch</string>
-    <string name="email">package com.tcd3d5b.bookingsystem.email</string>
-    <string name="password">package com.tcd3d5b.bookingsystem.password</string>
-    <string name="no_move">no_move</string>
-    <string name="victory">victory!</string>
-    <string name="fail">fail!</string>
-    <string name="goon">goon</string>
-    <string name="play_again">play_again?</string>
-    <string name="once_more">once_more</string>
-    <string name="exit">exit</string>
-    <string name="size4x4">&lt;  4x4  &gt;</string>
-    <string name="size3x3">&lt;  3x3  &gt;</string>
-    <string name="size5x5">&lt;  5x5  &gt;</string>
+    <string name="app_name">Time Zone</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

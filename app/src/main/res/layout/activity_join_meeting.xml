@@ -6,4 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".JoinMeetingActivity">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="181dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="50dp"
+        android:background="#FFFFFF"
+        android:text="SAVE and JOIN"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        tools:layout_editor_absoluteX="118dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="140dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Input Location"
+        android:textColor="#4F0F0D12"
+        app:layout_constraintTop_toBottomOf="@+id/editText4"
+        tools:layout_editor_absoluteX="161dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Meeting Name"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:layout_editor_absoluteX="127dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Join Meeting"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="100dp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="142dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="time"
+        android:text="input time"
+        android:textColor="#4F0F0D12"
+        app:layout_constraintTop_toBottomOf="@+id/editText5"
+        tools:layout_editor_absoluteX="162dp" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="143dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="date"
+        android:text="Meeting Date"
+        android:textColor="#4F0F0D12"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:layout_editor_absoluteX="160dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

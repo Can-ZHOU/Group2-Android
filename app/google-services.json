@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "69429217017-lg2ci8tcmlk3296vs1jvhefutovjuuoj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tcd3d5b.timezone",
+            "certificate_hash": "495d26d3b73304b33089d0de350557ffca8c504b"
+          }
+        },
+        {
           "client_id": "69429217017-ckgdaca9hqft58jpk3dbekamh79usnal.apps.googleusercontent.com",
           "client_type": 3
         }

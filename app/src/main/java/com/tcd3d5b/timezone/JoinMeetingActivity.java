@@ -21,7 +21,7 @@ public class JoinMeetingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_join_meeting);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        // Perform ItemSeletedListener
+        // Perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

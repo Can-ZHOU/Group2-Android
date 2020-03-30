@@ -25,6 +25,8 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        Intent intent = new Intent(getApplicationContext(), JoinMeetingActivity.class);
+
         start_time = findViewById(R.id.start_time);
         end_time = findViewById(R.id.end_time);
         date_choice = findViewById(R.id.day_choice);

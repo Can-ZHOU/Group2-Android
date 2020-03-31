@@ -7,29 +7,32 @@
     tools:context=".JoinMeetingActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/save_join_btn"
         android:layout_width="181dp"
         android:layout_height="43dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="420dp"
         android:background="#FFFFFF"
-        android:text="SAVE and JOIN" />
+        android:hint="SAVE and JOIN" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="140dp"
         android:layout_height="41dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="96dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Input Location"
+        android:hint="Input Location"
         android:textColor="#4F0F0D12" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Meeting Name"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="360dp"
+        android:hint="Meeting Name"
         android:textColor="#000000"
         android:textSize="24sp" />
 
@@ -37,8 +40,9 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="Join Meeting"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="16dp"
+        android:hint="Join Meeting"
         android:textColor="#000000"
         android:textSize="36sp" />
 
@@ -46,20 +50,22 @@
         android:id="@+id/editText4"
         android:layout_width="142dp"
         android:layout_height="41dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="172dp"
         android:ems="10"
         android:inputType="time"
-        android:text="input time"
+        android:hint="input time"
         android:textColor="#4F0F0D12" />
 
     <EditText
         android:id="@+id/editText5"
         android:layout_width="143dp"
         android:layout_height="43dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="128dp"
         android:ems="10"
         android:inputType="date"
-        android:text="Meeting Date"
+        android:hint="Meeting Date"
         android:textColor="#4F0F0D12" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

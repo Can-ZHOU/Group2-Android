@@ -115,12 +115,14 @@ public class DashboardActivity extends AppCompatActivity {
                 if (checkValid(date_choice.getText().toString())) {
                     if ((start_time.getText().toString().matches("((0[0-9]|1[0-9]|2[0-3]):[0-5][0-9])")) && (end_time.getText().toString().matches("((0[0-9]|1[0-9]|2[0-3]):[0-5][0-9])"))) {
                         Toast.makeText(getApplicationContext(), "Adding meeting", Toast.LENGTH_LONG).show();
-                        //createMeeting(date_choice.getText().toString(), start_time.getText().toString(), end_time.getText().toString());
+                        long id = Instant.now().getEpochSecond();
+                        createMeeting(date_choice.getText().toString(), start_time.getText().toString(), end_time.getText().toString(), Long.toString(id));
 
                         Intent cmt_intent = new Intent(getApplicationContext(), CreateMeetingActivity.class);
+                        cmt_intent.putExtra("confirm_id_key", Long.toString(id));
                         cmt_intent.putExtra("date_key", date_choice.getText().toString());
-                        cmt_intent.putExtra("stime_key", start_time.getText().toString());
-                        cmt_intent.putExtra("etime_key", end_time.getText().toString());
+                        cmt_intent.putExtra("s_time_key", start_time.getText().toString());
+                        cmt_intent.putExtra("e_time_key", end_time.getText().toString());
 
                         startActivity(cmt_intent);
                     } else
@@ -154,12 +156,11 @@ public class DashboardActivity extends AppCompatActivity {
         });
     }
 
-    private void createMeeting(String date, String start_time, String end_time) {
+    private void createMeeting(String date, String start_time, String end_time, String confirmId) {
         DBref = FirebaseDatabase.getInstance().getReference();
-        long id = Instant.now().getEpochSecond();
-        DBref.child("meeting").child("new_meeting").child(String.valueOf(id)).child(date).child(start_time).child(end_time).setValue(1);
+        DBref.child("meeting").child("new_meeting").child(confirmId).child(date).child(start_time).child(end_time).setValue(1);
 
-        Toast.makeText(getApplicationContext(), "Your Unique ID is" + String.valueOf(id), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Your Unique ID is" + confirmId, Toast.LENGTH_LONG).show();
 
         return;
     }

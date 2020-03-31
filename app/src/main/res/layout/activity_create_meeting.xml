@@ -6,6 +6,99 @@
     android:layout_height="match_parent"
     tools:context=".CreateMeetingActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="136dp"
+        android:text="Meeting Confirmation" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginEnd="12dp"
+        android:ems="10"
+        android:text="Booking ID: " />
+
+    <TextView
+        android:id="@+id/confirmID"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginEnd="12dp"
+        android:ems="10"
+        android:text="get_confirmId" />
+
+    <TextView
+        android:id="@+id/create_date"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginEnd="12dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/create_date0"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginEnd="12dp"
+        android:ems="10"
+        android:text="Meeting Date: " />
+
+    <TextView
+        android:id="@+id/create_s_time"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="12dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/create_s_time0"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="12dp"
+        android:ems="10"
+        android:text="Start Time:" />
+
+    <TextView
+        android:id="@+id/create_e_time"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="12dp"
+        android:ems="10"
+        android:text="End Time: " />
+
+    <TextView
+        android:id="@+id/create_e_time0"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="12dp"
+        android:ems="10"
+        android:text="End Time: " />
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
@@ -15,5 +108,4 @@
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_navigation" />
-
 </RelativeLayout>

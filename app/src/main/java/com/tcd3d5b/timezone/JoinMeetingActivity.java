@@ -24,12 +24,8 @@ public class JoinMeetingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join_meeting);
 
-        save_join_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // intent
-            }
-        });
+        // TODO
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         // Perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

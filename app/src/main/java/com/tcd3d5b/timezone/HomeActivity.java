@@ -1,38 +1,27 @@
 package com.tcd3d5b.timezone;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class JoinMeetingActivity extends AppCompatActivity {
-
-    @Override
+public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
-        Button save_join_btn;
-        save_join_btn = findViewById(R.id.save_join_btn);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_join_meeting);
-
-        // TODO
+        setContentView(R.layout.activity_home);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        // Perform ItemSelectedListener
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        // Perform ItemSeletedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.home:
+                    case R.id.dashboard:
                         startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
                         overridePendingTransition(0,0);
                         return true;
@@ -40,12 +29,12 @@ public class JoinMeetingActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), NotificationsActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.dashboard:
-                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-                        overridePendingTransition(0,0);
+                    case R.id.home:
+                        return true;
                 }
                 return false;
             }
         });
+
     }
 }

@@ -30,12 +30,12 @@ import java.util.Calendar;
 import java.util.Date;
 
 import static com.tcd3d5b.timezone.R.style.myTimePickerStyle;
+import static java.lang.Integer.parseInt;
 
 public class DashboardActivity extends AppCompatActivity {
     EditText start_time, end_time, date_choice, meeting_title;
     TextView  join_meeting_text, create_meeting_text;
     private DatabaseReference DBref;
-
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,7 +116,7 @@ public class DashboardActivity extends AppCompatActivity {
                     if ((start_time.getText().toString().matches("((0[0-9]|1[0-9]|2[0-3]):[0-5][0-9])")) && (end_time.getText().toString().matches("((0[0-9]|1[0-9]|2[0-3]):[0-5][0-9])"))) {
                         Toast.makeText(getApplicationContext(), "Adding meeting", Toast.LENGTH_LONG).show();
                         long id = Instant.now().getEpochSecond();
-                        createMeeting(date_choice.getText().toString(), start_time.getText().toString(), end_time.getText().toString(), Long.toString(id));
+                        createMeeting(date_choice.getText().toString(), start_time.getText().toString(), end_time.getText().toString(), Long.toString(id), meeting_title.getText().toString());
 
                         Intent cmt_intent = new Intent(getApplicationContext(), CreateMeetingActivity.class);
                         cmt_intent.putExtra("confirm_id_key", Long.toString(id));
@@ -156,9 +156,21 @@ public class DashboardActivity extends AppCompatActivity {
         });
     }
 
-    private void createMeeting(String date, String start_time, String end_time, String confirmId) {
+    private void createMeeting(String date, String start_time, String end_time, String confirmId, String title) {
         DBref = FirebaseDatabase.getInstance().getReference();
-        DBref.child("meeting").child("new_meeting").child(confirmId).child(date).child(start_time).child(end_time).setValue(1);
+        /*DBref.child("meeting").child(confirmId).child("date").child("attendee").setValue(date);
+        DBref.child("meeting").child(confirmId).child("date").child("attendee").child("1").child("local_start").setValue();
+        DBref.child("meeting").child(confirmId).child("date").child("attendee").child("1").child("local_end").setValue();
+        DBref.child("meeting").child(confirmId).child("date").child("attendee").child("1").child("standard_start").setValue();
+        DBref.child("meeting").child(confirmId).child("date").child("attendee").child("1").child("standard_end").setValue();
+
+        DBref.child("meeting").child(confirmId).child("duration").setValue(Long.toString(diff));
+         */
+        DBref.child("meeting").child(confirmId).child("date").setValue(date);
+        DBref.child("meeting").child(confirmId).child("start_time").setValue(start_time);
+        DBref.child("meeting").child(confirmId).child("meeting_name").setValue(title);
+        DBref.child("meeting").child(confirmId).child("suggested_start").setValue(start_time);
+        DBref.child("meeting").child(confirmId).child("suggested_end").setValue(end_time);
 
         Toast.makeText(getApplicationContext(), "Your Unique ID is" + confirmId, Toast.LENGTH_LONG).show();
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tcd3d5b.timezone">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -27,6 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

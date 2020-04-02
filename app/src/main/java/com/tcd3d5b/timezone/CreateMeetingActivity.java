@@ -10,15 +10,30 @@ import androidx.navigation.ui.NavigationUI;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class CreateMeetingActivity extends AppCompatActivity {
 
+    TextView confirmID, create_date, create_s_time, create_e_time;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_meeting);
+
+        confirmID = (TextView) findViewById(R.id.confirmID);
+        create_date = (TextView) findViewById(R.id.create_date);
+        create_s_time = (TextView) findViewById(R.id.create_s_time);
+        create_e_time = (TextView) findViewById(R.id.create_e_time);
+
+        Intent intent = getIntent();
+
+        confirmID.setText(intent.getStringExtra("confirm_id_key"));
+        create_date.setText(intent.getStringExtra("date_key"));
+        create_s_time.setText(intent.getStringExtra("s_time_key"));
+        create_e_time.setText(intent.getStringExtra("e_time_key"));
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         // Perform ItemSeletedListener

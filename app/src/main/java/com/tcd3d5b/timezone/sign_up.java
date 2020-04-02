@@ -31,8 +31,9 @@ user user;
         password = findViewById(R.id.pwd);
         sign = findViewById(R.id.sgnup);
         user = new user();
-        final String str = name.getText().toString();
-        final String id= str.substring(str.indexOf("@")+1);
+        final String str = email.getText().toString();
+        int index = str.indexOf("@");
+        final String id= str.substring(0,index);
         //Log.i(TAG,id);
         dref= FirebaseDatabase.getInstance().getReference().child("user").child(id);
         sign.setOnClickListener(new View.OnClickListener() {

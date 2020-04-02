@@ -32,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
     private static final int PERMISSION_CODE=1001;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_home);
+        setContentView(R.layout.activity_home);
         mname = findViewById(R.id.name);
         mmobile = findViewById(R.id.mobile);
         mlocation =findViewById(R.id.location);
@@ -63,10 +63,8 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
-
-        String id ;
-        Bundle extras = getIntent().getExtras();
-        id = extras.getString("userid");
+        Intent intent = getIntent();
+        String id = intent.getStringExtra("userid");
 
         myRef = FirebaseDatabase.getInstance().getReference().child("user").child(id);
         myRef.addValueEventListener(new ValueEventListener() {

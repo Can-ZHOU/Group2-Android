@@ -33,10 +33,8 @@ user user;
         user = new user();
         final String str = name.getText().toString();
         final String id= str.substring(str.indexOf("@")+1);
-
-
-
-        dref= FirebaseDatabase.getInstance().getReference().child("user");
+        //Log.i(TAG,id);
+        dref= FirebaseDatabase.getInstance().getReference().child("user").child(id);
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,10 +44,10 @@ user user;
                 user.setInfo(info.getText().toString().trim());
                 user.setLocation(location.getText().toString().trim());
                 user.setMobile(dphone);
-                dref.child(id).push().setValue(user);
+                dref.push().setValue(user);
                 Toast.makeText(sign_up.this,"Sign up successfully",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                intent.putExtra("userid", id);
+                intent.putExtra("userid",id);
                 startActivity(intent);
 
 

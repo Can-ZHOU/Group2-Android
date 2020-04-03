@@ -6,13 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".NotificationsActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My Meeting"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"/>
+    <ListView
+        android:id="@+id/lv_news_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"  />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

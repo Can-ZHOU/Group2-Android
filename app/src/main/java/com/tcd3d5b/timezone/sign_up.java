@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +12,8 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import static android.text.TextUtils.isEmpty;
 
 public class sign_up extends AppCompatActivity {
 EditText name,email,phone,info,location,password;
@@ -31,11 +32,6 @@ user user;
         password = findViewById(R.id.pwd);
         sign = findViewById(R.id.sgnup);
         user = new user();
-        final String str = email.getText().toString();
-        int index = str.indexOf("@");
-        final String id= str.substring(0,index);
-        //Log.i(TAG,id);
-        dref= FirebaseDatabase.getInstance().getReference().child("user").child(id);
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,11 +41,23 @@ user user;
                 user.setInfo(info.getText().toString().trim());
                 user.setLocation(location.getText().toString().trim());
                 user.setMobile(dphone);
-                dref.push().setValue(user);
-                Toast.makeText(sign_up.this,"Sign up successfully",Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                intent.putExtra("userid",id);
-                startActivity(intent);
+
+               if(isEmpty(email.getText().toString())==false){
+                   final String str = email.getText().toString();
+                    int index = str.indexOf("@");
+                    final String id= str.substring(0,index);
+                    dref= FirebaseDatabase.getInstance().getReference().child("user").child(id);
+                    dref.setValue(user);
+                   Toast.makeText(sign_up.this,"Sign up successfully",Toast.LENGTH_LONG).show();
+                   Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                   intent.putExtra("userid",id);
+                   startActivity(intent);
+                }
+                else{
+                    Toast.makeText(sign_up.this,"Please enter the valid email id",Toast.LENGTH_LONG).show();
+                }
+
+
 
 
             }

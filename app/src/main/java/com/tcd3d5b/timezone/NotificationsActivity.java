@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,6 +32,25 @@ public class NotificationsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications);
+
+        DatabaseReference connectedRef = FirebaseDatabase.getInstance().getReference(".info/connected");
+        connectedRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                boolean connected = snapshot.getValue(Boolean.class);
+                if (connected) {
+                    Log.d((String) TAG, "connected");
+                } else {
+                    Log.d((String) TAG, "not connected");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w((String) TAG, "Listener was cancelled");
+            }
+        });
+
         final ArrayList<HashMap<String, Object>> myMeeting = getListItem();
 
         new Handler().postDelayed(new Runnable() {
@@ -43,16 +63,22 @@ public class NotificationsActivity extends AppCompatActivity {
                             R.layout.item_list,
                             new String[] {"meetingName","meetingDate", "meetingTime", "meetingDuration", "meetingID", "button_detail"},
                             new int[] {R.id.meetingName,R.id.meetingDate,R.id.meetingTime,R.id.meetingDuration,R.id.meetingID,R.id.button_detail}) {
+
                         @Override
                         public View getView(int position, View convertView, ViewGroup parent) {
-                            View v = super.getView(position, convertView, parent);
+                            final View v = super.getView(position, convertView, parent);
 
                             Button b=(Button)v.findViewById(R.id.button_detail);
                             final String str = b.getText().toString();
                             b.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View arg0) {
-                                    Toast.makeText(NotificationsActivity.this,str,Toast.LENGTH_SHORT).show();
+                                    Bundle bundle = new Bundle();
+                                    Intent intent=new Intent();
+                                    intent.setClass(NotificationsActivity.this,OneMeetingActivity.class);
+                                    bundle.putString("meetingID", str);
+                                    intent.putExtra("meeting_detail", bundle);
+                                    startActivity(intent);
                                 }
                             });
                             return v;
@@ -61,7 +87,7 @@ public class NotificationsActivity extends AppCompatActivity {
                     ListView list= (ListView) findViewById(R.id.lv_news_list);
                     list.setAdapter(mSimpleAdapter);
                 } else {
-                    Log.d((String) TAG, "fuck: " + myMeeting.size());
+                    Log.d((String) TAG, "wtf: " + myMeeting.size());
                 }
 
             }

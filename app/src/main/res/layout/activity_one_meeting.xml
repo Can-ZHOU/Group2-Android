@@ -6,6 +6,96 @@
     android:layout_height="match_parent"
     tools:context=".OneMeetingActivity">
 
+    <TextView
+        android:id="@+id/one_meeting_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Meeting Name!"
+        android:textSize="30dp"
+        />
+    <TextView
+        android:id="@+id/one_meeting_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="Meeting Date"
+        android:textSize="20dp"
+        android:layout_below="@+id/one_meeting_name"
+        />
+    <TextView
+        android:id="@+id/one_meeting_member"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="Group Members:"
+        android:textSize="20dp"
+        android:layout_below="@+id/one_meeting_date"
+        />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:height="100dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/one_meeting_member"
+        android:id="@+id/lv_group_member"
+        android:layout_height="300dp" />
+
+    <TextView
+        android:id="@+id/one_meeting_suggest"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:text="Suggest Time Slot"
+        android:textSize="30dp"
+        android:layout_below="@+id/lv_group_member"
+        />
+
+    <TextView
+        android:id="@+id/one_meeting_selctTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Please Select Meeting Time:"
+        android:textSize="20dp"
+        android:layout_below="@+id/one_meeting_suggest"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/one_meeting_selctTime"
+        android:id="@id/inputTime"
+        >
+        <EditText
+            android:id="@+id/editStartTime"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:ems="10"
+            android:inputType="time"
+            />
+        <EditText
+            android:id="@+id/editEndTime"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:ems="10"
+            android:layout_alignRight="@+id/editStartTime"
+            android:inputType="time"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Save"
+        android:layout_below="@+id/inputTime"/>
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
@@ -14,6 +104,8 @@
         app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
-        app:menu="@menu/menu_navigation" />
+        app:menu="@menu/menu_navigation"
+        />
+
 
 </RelativeLayout>

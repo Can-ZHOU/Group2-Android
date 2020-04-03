@@ -2,21 +2,22 @@ package com.tcd3d5b.timezone;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,10 +25,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
-    TextView mname,mmobile,memail,minfo,mlocation ;
+    TextView mname,mmobile,memail,minfo,mlocation,muserid ;
     ImageView mimage;
+    Button rst;
     DatabaseReference myRef;
-    static final String myprefs = "myprefs";
     private static final int IMAGE_PICK_CODE=1000;
     private static final int PERMISSION_CODE=1001;
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,33 +40,28 @@ public class HomeActivity extends AppCompatActivity {
         minfo = findViewById(R.id.info);
         memail = findViewById(R.id.email);
         mimage=findViewById(R.id.pic);
+        muserid = findViewById(R.id.user_id);
+        rst = findViewById(R.id.reset_pwd);
 
-        SharedPreferences mpreferences = getSharedPreferences(myprefs,MODE_PRIVATE);
-        SharedPreferences.Editor editor = mpreferences.edit();
         mimage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-                    if(checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                            == PackageManager.PERMISSION_DENIED){
-                        String[] permission = {Manifest.permission.READ_EXTERNAL_STORAGE};
-                        //show popup
-                        requestPermissions(permission,PERMISSION_CODE);
-                    }
-                    else{
-                        //permisiion already granted
-                        pickimagefromgallery();
-
-                    }
+                if(checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                        == PackageManager.PERMISSION_DENIED){
+                    String[] permission = {Manifest.permission.READ_EXTERNAL_STORAGE};
+                    //show popup
+                    requestPermissions(permission,PERMISSION_CODE);
                 }
-                else {
+                else{
+                    //permisiion already granted
                     pickimagefromgallery();
+
                 }
             }
         });
         Intent intent = getIntent();
         String id = intent.getStringExtra("userid");
-
+        muserid.setText(id);
         myRef = FirebaseDatabase.getInstance().getReference().child("user").child(id);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -75,11 +71,13 @@ public class HomeActivity extends AppCompatActivity {
                 String mobile=dataSnapshot.child("mobile").getValue() .toString();
                 String info=dataSnapshot.child("info").getValue() .toString();
                 String location=dataSnapshot.child("location").getValue() .toString();
+
                 mname.setText(name);
                 mmobile.setText(mobile);
                 mlocation.setText(location);
                 minfo.setText(info);
                 memail.setText(email);
+
             }
 
             @Override
@@ -87,8 +85,22 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
-
-
+        rst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().sendPasswordResetEmail(memail.getText().toString())
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(getApplicationContext(), "Email sent.", Toast.LENGTH_LONG).show();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Please try again.", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+            }
+        });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);

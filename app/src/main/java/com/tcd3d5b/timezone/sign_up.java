@@ -1,15 +1,20 @@
 package com.tcd3d5b.timezone;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.SignInMethodQueryResult;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -19,6 +24,7 @@ public class sign_up extends AppCompatActivity {
 EditText name,email,phone,info,location,password;
 Button sign;
 DatabaseReference dref;
+private FirebaseAuth mAuth;
 user user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,32 +38,58 @@ user user;
         password = findViewById(R.id.pwd);
         sign = findViewById(R.id.sgnup);
         user = new user();
+        mAuth = FirebaseAuth.getInstance();
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int dphone=Integer.parseInt(phone.getText().toString().trim());
                 user.setName(name.getText().toString().trim());
-                user.setEmail(email.getText().toString().trim());
+                final String eml=email.getText().toString().trim();
+                user.setEmail(eml);
                 user.setInfo(info.getText().toString().trim());
                 user.setLocation(location.getText().toString().trim());
+                final String pwd= password.getText().toString().trim();
                 user.setMobile(dphone);
-
-               if(isEmpty(email.getText().toString())==false){
-                   final String str = email.getText().toString();
-                    int index = str.indexOf("@");
-                    final String id= str.substring(0,index);
-                    dref= FirebaseDatabase.getInstance().getReference().child("user").child(id);
-                    dref.setValue(user);
-                   Toast.makeText(sign_up.this,"Sign up successfully",Toast.LENGTH_LONG).show();
-                   Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                   intent.putExtra("userid",id);
-                   startActivity(intent);
+                if(isEmpty(pwd)){
+                    Toast.makeText(sign_up.this,"Password cannot be remain Empty!!",Toast.LENGTH_LONG).show();
+                     password.requestFocus();
                 }
-                else{
-                    Toast.makeText(sign_up.this,"Please enter the valid email id",Toast.LENGTH_LONG).show();
+                if((pwd).length()<6){
+                    Toast.makeText(sign_up.this,"Password length should be more than 6",Toast.LENGTH_LONG).show();
+                    password.requestFocus();
                 }
 
+               if(isEmpty(eml)){
+                   Toast.makeText(sign_up.this,"Please enter the valid email id",Toast.LENGTH_LONG).show();
+                   email.requestFocus();
+               }
+                int index = eml.indexOf("@");
+                final String id= eml.substring(0,index);
+                mAuth.fetchSignInMethodsForEmail(eml).addOnCompleteListener(sign_up.this, new OnCompleteListener<SignInMethodQueryResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                        boolean check= !task.getResult().getSignInMethods().isEmpty();
+                        if(!check){
+                            mAuth.createUserWithEmailAndPassword(eml,pwd).addOnCompleteListener(sign_up.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if(task.isSuccessful()){
+                                        dref = FirebaseDatabase.getInstance().getReference().child("user").child(id);
+                                        dref.setValue(user);
+                                        Toast.makeText(sign_up.this,"Sign up successfully",Toast.LENGTH_LONG).show();
+                                        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                                        intent.putExtra("userid",id);
+                                        startActivity(intent);
+                                    }
+                                }
+                            });
+                        }
+                        else {
+                            Toast.makeText(sign_up.this,"Email ID already Present!!",Toast.LENGTH_LONG).show();
+                        }
 
+                    }
+                });
 
 
             }

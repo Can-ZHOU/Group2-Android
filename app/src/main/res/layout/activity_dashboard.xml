@@ -65,12 +65,19 @@
         android:id="@+id/meeting_bio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="290dp"
         android:ems="10"
         android:gravity="start"
         android:hint="What's this meeting about?"
         android:inputType="textMultiLine" />
 
+    <Spinner
+        android:id="@+id/tz_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:entries="@array/tzones_array"
+        android:hint="Select Time Zone"/>
     <TextView
         android:id="@+id/join_meeting_text"
         android:layout_width="match_parent"
@@ -92,4 +99,5 @@
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_navigation" />
+
 </RelativeLayout>

@@ -11,14 +11,28 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginStart="145dp"
         android:layout_marginLeft="175dp"
-        android:layout_marginTop="25dp"
-        android:text="Sign Up"
+        android:layout_marginTop="8dp"
+        android:text="Lets Get You Sign Up"
         android:textAlignment="center"
         android:textColor="#ffffff"
         android:textSize="35sp" />
+
+    <EditText
+        android:id="@+id/phne"
+        android:layout_width="280dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="220dp"
+        android:hint="Phone No."
+        android:inputType="phone"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
     <EditText
         android:id="@+id/nme"
@@ -39,34 +53,10 @@
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
         android:layout_marginTop="170dp"
-        android:inputType="textEmailAddress"
         android:hint="Email"
-        android:textColorHint="@android:color/white"
-        android:textColor="@android:color/white" />
-
-    <EditText
-        android:id="@+id/phne"
-        android:layout_width="280dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="220dp"
-        android:inputType="phone"
-        android:hint="Phone No."
-        android:textColorHint="@android:color/white"
-        android:textColor="@android:color/white" />
-
-    <EditText
-        android:id="@+id/clg"
-        android:layout_width="280dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="270dp"
-        android:inputType="text"
-        android:hint="College name"
-        android:textColorHint="@android:color/white"
-        android:textColor="@android:color/white" />
+        android:inputType="textEmailAddress"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
     <EditText
         android:id="@+id/cty"
@@ -75,10 +65,10 @@
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
         android:layout_marginTop="320dp"
-        android:inputType="text"
         android:hint="City"
-        android:textColorHint="@android:color/white"
-        android:textColor="@android:color/white" />
+        android:inputType="text"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
     <EditText
         android:id="@+id/pwd"
@@ -87,11 +77,23 @@
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
         android:layout_marginTop="370dp"
+        android:hint="Password"
         android:inputType="textPassword"
         android:password="true"
-        android:hint="Password"
-        android:textColorHint="@android:color/white"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
+
+    <EditText
+        android:id="@+id/clg"
+        android:layout_width="280dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="270dp"
+        android:hint="College name"
+        android:inputType="text"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
 
     <Button

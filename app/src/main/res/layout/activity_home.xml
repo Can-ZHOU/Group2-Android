@@ -10,7 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="423dp"
         android:layout_height="268dp"
-        android:background="#801423"
+        android:background="@drawable/bg_sq"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

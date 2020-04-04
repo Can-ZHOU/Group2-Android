@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,14 +43,15 @@ user user;
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int dphone=Integer.parseInt(phone.getText().toString().trim());
+                long dphone=Long.parseLong(phone.getText().toString().trim());
                 user.setName(name.getText().toString().trim());
                 final String eml=email.getText().toString().trim();
                 user.setEmail(eml);
                 user.setInfo(info.getText().toString().trim());
                 user.setLocation(location.getText().toString().trim());
                 final String pwd= password.getText().toString().trim();
-                user.setMobile(dphone);
+                user.setMobile((int) dphone);
+
                 if(isEmpty(pwd)){
                     Toast.makeText(sign_up.this,"Password cannot be remain Empty!!",Toast.LENGTH_LONG).show();
                      password.requestFocus();
@@ -77,8 +79,7 @@ user user;
                                         dref = FirebaseDatabase.getInstance().getReference().child("user").child(id);
                                         dref.setValue(user);
                                         Toast.makeText(sign_up.this,"Sign up successfully",Toast.LENGTH_LONG).show();
-                                        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                                        intent.putExtra("userid",id);
+                                        Intent intent = new Intent(getApplicationContext(),login.class);
                                         startActivity(intent);
                                     }
                                 }
@@ -96,5 +97,15 @@ user user;
 
         });
 
+    }
+    private boolean validateEmailAddress(EditText email){
+        String emailInput = email.getText().toString();
+        if(!emailInput.isEmpty()&& Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()){
+            Toast.makeText(this, "Email Address Validated Successfully!",Toast.LENGTH_SHORT).show();
+            return true;
+        }else{
+            Toast.makeText(this,"Invalid Email Address! ", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 }

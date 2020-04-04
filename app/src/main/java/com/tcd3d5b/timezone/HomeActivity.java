@@ -2,6 +2,7 @@ package com.tcd3d5b.timezone;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -28,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
     TextView mname,mmobile,memail,minfo,mlocation,muserid ;
     ImageView mimage;
     Button rst;
+
     DatabaseReference myRef;
     private static final int IMAGE_PICK_CODE=1000;
     private static final int PERMISSION_CODE=1001;
@@ -60,7 +62,17 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
         Intent intent = getIntent();
-        String id = intent.getStringExtra("userid");
+
+        final String myprefs = "myprefs";
+
+        SharedPreferences mpreferences = getSharedPreferences(myprefs,MODE_PRIVATE);
+
+        String email = mpreferences.getString(getString(R.string.email),"");
+
+        //Toast.makeText(getApplicationContext(), "Login successful:" + email, Toast.LENGTH_LONG).show();
+        int index = email.indexOf("@");
+        final String id= email.substring(0,index);
+
         muserid.setText(id);
         myRef = FirebaseDatabase.getInstance().getReference().child("user").child(id);
         myRef.addValueEventListener(new ValueEventListener() {

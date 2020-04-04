@@ -27,7 +27,7 @@ Button sign,login;
 FirebaseAuth myFirebaseAuth;
 FirebaseAuth.AuthStateListener myAuthListener;
 private SharedPreferences mpreferences;
-static final String myprefs = "myprefs";
+
 private SharedPreferences.Editor meditor;
 
     @Override
@@ -41,9 +41,12 @@ private SharedPreferences.Editor meditor;
         sign=findViewById(R.id.sgnup);
         login=findViewById(R.id.lgn);
         myFirebaseAuth = FirebaseAuth.getInstance();
+
         mpreferences =getSharedPreferences("myprefs",MODE_PRIVATE);
         meditor = mpreferences.edit();
+
         checksharedprefernces();
+
         myAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -59,8 +62,6 @@ private SharedPreferences.Editor meditor;
             public void onClick(View v) {
                 String email_s = l_email.getText().toString();
                 String pwd_s = l_pwd.getText().toString();
-                int index = email_s.indexOf("@");
-                final String id= email_s.substring(0,index);
 
                 if (email_s.isEmpty()) {
                     Toast.makeText(login.this,"Please input email",Toast.LENGTH_LONG).show();
@@ -75,7 +76,6 @@ private SharedPreferences.Editor meditor;
                             if (task.isSuccessful()) {
                                 startActivity(new Intent(login.this, HomeActivity.class));
                                 Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                                intent.putExtra("userid",id);
                                 startActivity(intent);
                             }
                             else{

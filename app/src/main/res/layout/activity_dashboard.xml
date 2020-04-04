@@ -107,19 +107,21 @@
 
     <Button
         android:id = "@+id/join_meeting"
-        android:background="@drawable/toms_button"
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_below="@id/meeting_id"
         android:text = "Join Meeting!"
         android:textColor="#FFFFFF"
         android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
+        android:layout_centerHorizontal="true"  />
 
-
-
-
-        />
+    <Spinner
+        android:id="@+id/tz_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:entries="@array/tzones_array"
+        android:hint="Select Time Zone"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

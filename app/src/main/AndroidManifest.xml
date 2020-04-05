@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".HomeActivity" android:exported="true"/>
         <activity android:name=".OneMeetingActivity" android:exported="true"/>
         <activity android:name=".JoinMeetingActivity" android:exported="true"/>
@@ -20,16 +21,22 @@
         <activity
             android:name=".login"
             android:exported="true"
+=======
+        <activity android:name=".OneMeetingActivity"></activity>
+        <activity android:name=".JoinMeetingActivity" />
+        <activity android:name=".CreateMeetingActivity" />
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".NotificationsActivity"/>
+        <activity android:name=".DashboardActivity"/>
+        <activity
+            android:name=".HomeActivity"
+>>>>>>> parent of 5c225ae... Merge pull request #46 from Can-ZHOU/profile-page
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -14,9 +14,9 @@
         <activity android:name=".CreateMeetingActivity" />
         <activity android:name=".MainActivity"/>
         <activity android:name=".NotificationsActivity"/>
-        <activity android:name=".DashboardActivity"/>
+        <activity android:name=".HomeActivity"/>
         <activity
-            android:name=".HomeActivity"
+            android:name=".DashboardActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

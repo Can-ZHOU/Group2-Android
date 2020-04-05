@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +21,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 import static android.text.TextUtils.isEmpty;
 public class login extends AppCompatActivity{
-EditText l_email,l_pwd;
+    private static final String TAG = "login";
+    EditText l_email,l_pwd;
 RadioButton rem;
 TextView frgtpwd;
 Button sign,login;
@@ -46,6 +48,7 @@ private SharedPreferences.Editor meditor;
         meditor = mpreferences.edit();
 
         checksharedprefernces();
+        Log.i(TAG, "Login page");
 
         myAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override

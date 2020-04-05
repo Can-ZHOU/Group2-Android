@@ -7,9 +7,11 @@
     tools:context=".NotificationsActivity">
 
     <ListView
+        android:layout_marginTop="20dp"
         android:id="@+id/lv_news_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"  />
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

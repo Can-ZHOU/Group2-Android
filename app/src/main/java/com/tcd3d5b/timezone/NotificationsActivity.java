@@ -1,6 +1,7 @@
 package com.tcd3d5b.timezone;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -33,6 +34,12 @@ public class NotificationsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications);
 
+        final String myprefs = "myprefs";
+        SharedPreferences mpreferences = getSharedPreferences(myprefs,MODE_PRIVATE);
+        String email = mpreferences.getString(getString(R.string.email),"");
+        int index = email.indexOf("@");
+        final String userID= email.substring(0,index);
+
         DatabaseReference connectedRef = FirebaseDatabase.getInstance().getReference(".info/connected");
         connectedRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -51,47 +58,58 @@ public class NotificationsActivity extends AppCompatActivity {
             }
         });
 
-        final ArrayList<HashMap<String, Object>> myMeeting = getListItem();
+        final ArrayList<HashMap<String, Object>> myMeeting = getListItem(userID);
+
+
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-                if(myMeeting.size()!=0) {
-                    SimpleAdapter mSimpleAdapter = new SimpleAdapter(NotificationsActivity.this,
-                            myMeeting,
-                            R.layout.item_list,
-                            new String[] {"meetingName","meetingDate", "meetingTime", "meetingDuration", "meetingID", "button_detail"},
-                            new int[] {R.id.meetingName,R.id.meetingDate,R.id.meetingTime,R.id.meetingDuration,R.id.meetingID,R.id.button_detail}) {
-
-                        @Override
-                        public View getView(int position, View convertView, ViewGroup parent) {
-                            final View v = super.getView(position, convertView, parent);
-
-                            Button b=(Button)v.findViewById(R.id.button_detail);
-                            final String str = b.getText().toString();
-                            b.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View arg0) {
-                                    Bundle bundle = new Bundle();
-                                    Intent intent=new Intent();
-                                    intent.setClass(NotificationsActivity.this,OneMeetingActivity.class);
-                                    bundle.putString("meetingID", str);
-                                    intent.putExtra("meeting_detail", bundle);
-                                    startActivity(intent);
-                                }
-                            });
-                            return v;
-                        }
-                    };
-                    ListView list= (ListView) findViewById(R.id.lv_news_list);
-                    list.setAdapter(mSimpleAdapter);
-                } else {
-                    Log.d((String) TAG, "wtf: " + myMeeting.size());
-                }
-
+                ListView list= (ListView) findViewById(R.id.lv_news_list);
+                MeetingAdapter adapter = new MeetingAdapter(NotificationsActivity.this, myMeeting);
+                list.setAdapter(adapter);
             }
         },2000);
+
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//                if(myMeeting.size()!=0) {
+//                    SimpleAdapter mSimpleAdapter = new SimpleAdapter(NotificationsActivity.this,
+//                            myMeeting,
+//                            R.layout.item_list,
+//                            new String[] {"meetingName","meetingDate", "meetingTime", "meetingDuration", "meetingID", "button_detail"},
+//                            new int[] {R.id.meetingName,R.id.meetingDate,R.id.meetingTime,R.id.meetingDuration,R.id.meetingID,R.id.button_detail}) {
+//
+//                        @Override
+//                        public View getView(int position, View convertView, ViewGroup parent) {
+//                            final View v = super.getView(position, convertView, parent);
+//
+//                            Button b=(Button)v.findViewById(R.id.button_detail);
+//                            final String str = b.getText().toString();
+//                            b.setOnClickListener(new View.OnClickListener() {
+//                                @Override
+//                                public void onClick(View arg0) {
+//                                    Bundle bundle = new Bundle();
+//                                    Intent intent=new Intent();
+//                                    intent.setClass(NotificationsActivity.this,OneMeetingActivity.class);
+//                                    bundle.putString("meetingID", str);
+//                                    intent.putExtra("meeting_detail", bundle);
+//                                    startActivity(intent);
+//                                }
+//                            });
+//                            return v;
+//                        }
+//                    };
+//                    ListView list= (ListView) findViewById(R.id.lv_news_list);
+//                    list.setAdapter(mSimpleAdapter);
+//                } else {
+//                    Log.d((String) TAG, "wtf: " + myMeeting.size());
+//                }
+//
+//            }
+//        },2000);
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -118,11 +136,11 @@ public class NotificationsActivity extends AppCompatActivity {
     }
 
 
-    public ArrayList<HashMap<String, Object>> getListItem() {
+    public ArrayList<HashMap<String, Object>> getListItem(String userID) {
         final ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
         final DatabaseReference DBref;
         DBref = FirebaseDatabase.getInstance().getReference();
-        final Query userQuery = DBref.child("user").child("useremail_one").child("meetings");
+        final Query userQuery = DBref.child("user").child(userID).child("meetings");
 
         userQuery.addValueEventListener(new ValueEventListener() {
             @Override
@@ -205,6 +223,9 @@ public class NotificationsActivity extends AppCompatActivity {
 //        ListView list= (ListView) findViewById(R.id.lv_news_list);
 //        list.setAdapter(mSimpleAdapter);
 
+//        ListView list= (ListView) findViewById(R.id.lv_news_list);
+//        MeetingAdapter adapter = new MeetingAdapter(NotificationsActivity.this, listItem);
+//        list.setAdapter(adapter);
         return listItem;
     }
 

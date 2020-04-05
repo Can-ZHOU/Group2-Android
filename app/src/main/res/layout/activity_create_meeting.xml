@@ -33,8 +33,7 @@
         android:layout_marginStart="200dp"
         android:layout_marginTop="360dp"
         android:layout_marginEnd="12dp"
-        android:ems="10"
-        android:text="get_confirmId" />
+        android:ems="10" />
 
     <TextView
         android:id="@+id/create_date"
@@ -86,8 +85,7 @@
         android:layout_marginStart="200dp"
         android:layout_marginTop="420dp"
         android:layout_marginEnd="12dp"
-        android:ems="10"
-        android:text="End Time: " />
+        android:ems="10" />
 
     <TextView
         android:id="@+id/create_e_time0"
@@ -108,4 +106,12 @@
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_navigation" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="246dp"
+        android:layout_height="158dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="160dp"
+        app:srcCompat="@android:drawable/checkbox_on_background" />
 </RelativeLayout>

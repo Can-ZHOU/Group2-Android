@@ -6,4 +6,9 @@
     <string name="email">package com.tcd3d5b.timezone.email;</string>
     <string name="password">package com.tcd3d5b.timezone.pwd;</string>
     <string name="radio">package com.tcd3d5b.timezone;</string>
+    <string-array name="tzones_array">
+        <item>Ireland (GMT +1)</item>
+        <item>India (GMT +5.30)</item>
+        <item>China (GMT +7)</item>
+    </string-array>
 </resources>

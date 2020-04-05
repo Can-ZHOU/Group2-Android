@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -25,7 +26,9 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -33,9 +36,9 @@ import static com.tcd3d5b.timezone.R.style.myTimePickerStyle;
 
 public class DashboardActivity extends AppCompatActivity {
     EditText start_time, end_time, date_choice, meeting_title;
-    TextView  join_meeting_text, create_meeting_text;
+    TextView  join_meeting_text, create_meeting_text, email;
+    Spinner tzones;
     private DatabaseReference DBref;
-
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +47,9 @@ public class DashboardActivity extends AppCompatActivity {
         start_time = findViewById(R.id.start_time);
         end_time = findViewById(R.id.end_time);
         date_choice = findViewById(R.id.date_choice);
+        email = findViewById(R.id.email);
+
+        tzones = findViewById(R.id.tz_spinner);
 
         join_meeting_text = findViewById(R.id.join_meeting_text);
         create_meeting_text = findViewById(R.id.create_meeting_text);
@@ -112,11 +118,11 @@ public class DashboardActivity extends AppCompatActivity {
         create_meeting_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkValid(date_choice.getText().toString())) {
+                if (valiDate(date_choice.getText().toString())) {
                     if ((start_time.getText().toString().matches("((0[0-9]|1[0-9]|2[0-3]):[0-5][0-9])")) && (end_time.getText().toString().matches("((0[0-9]|1[0-9]|2[0-3]):[0-5][0-9])"))) {
                         Toast.makeText(getApplicationContext(), "Adding meeting", Toast.LENGTH_LONG).show();
                         long id = Instant.now().getEpochSecond();
-                        createMeeting(date_choice.getText().toString(), start_time.getText().toString(), end_time.getText().toString(), Long.toString(id));
+                        createMeeting(date_choice.getText().toString(), start_time.getText().toString(), end_time.getText().toString(), Long.toString(id), meeting_title.getText().toString(), email.getText().toString(), tzones.getSelectedItem().toString());
 
                         Intent cmt_intent = new Intent(getApplicationContext(), CreateMeetingActivity.class);
                         cmt_intent.putExtra("confirm_id_key", Long.toString(id));
@@ -156,35 +162,46 @@ public class DashboardActivity extends AppCompatActivity {
         });
     }
 
-    private void createMeeting(String date, String start_time, String end_time, String confirmId) {
+    private void createMeeting(String date, String start_time, String end_time, String confirmId, String title, String email, String loc) {
         DBref = FirebaseDatabase.getInstance().getReference();
-        DBref.child("meeting").child("new_meeting").child(confirmId).child(date).child(start_time).child(end_time).setValue(1);
+        LocalTime t1 = LocalTime.parse(start_time);
+        LocalTime t2 = LocalTime.parse(end_time);
+        Duration diff = Duration.between(t1, t2);
+
+        DBref.child("meeting").child(confirmId).child("attendee").child("1").child("local_start").setValue(start_time);
+        DBref.child("meeting").child(confirmId).child("attendee").child("1").child("local_end").setValue(end_time);
+        DBref.child("meeting").child(confirmId).child("attendee").child("1").child("standard_start").setValue("");
+        DBref.child("meeting").child(confirmId).child("attendee").child("1").child("standard_end").setValue("");
+        DBref.child("meeting").child(confirmId).child("attendee").child("1").child("location").setValue(loc);
+        DBref.child("meeting").child(confirmId).child("attendee").child("1").child("userid").setValue(email);
+
+        DBref.child("meeting").child(confirmId).child("date").setValue(date);
+        DBref.child("meeting").child(confirmId).child("start_time").setValue(start_time);
+        DBref.child("meeting").child(confirmId).child("meeting_name").setValue(title);
+        DBref.child("meeting").child(confirmId).child("duration").setValue(diff.toHours());
+        DBref.child("meeting").child(confirmId).child("suggest_start").setValue(start_time);
+        DBref.child("meeting").child(confirmId).child("suggest_end").setValue(end_time);
 
         Toast.makeText(getApplicationContext(), "Your Unique ID is" + confirmId, Toast.LENGTH_LONG).show();
 
         return;
     }
 
-    public static boolean checkValid(String strDate)
-    {
+    public static boolean valiDate(String strDate)  {
         /* Check if date is 'null' */
-        if (strDate.trim().equals(""))
-        {
+        if (strDate.trim().equals(""))  {
             return true;
         }
         /* Date is not 'null' */
-        else
-        {
+        else    {
             SimpleDateFormat strdate = new SimpleDateFormat("yyyy-MM-dd");
             strdate.setLenient(false);
-            try
-            {
+            try {
                 Date javaDate = strdate.parse(strDate);
                 System.out.println(strDate+" is valid date format");
             }
             /* Date format is invalid */
-            catch (ParseException e)
-            {
+            catch (ParseException e)    {
                 System.out.println(strDate+" is Invalid Date format");
                 return false;
             }

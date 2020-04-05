@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <activity android:name=".HomeActivity" android:exported="true"/>
         <activity android:name=".OneMeetingActivity" android:exported="true"/>
         <activity android:name=".JoinMeetingActivity" android:exported="true"/>
@@ -25,6 +26,8 @@
 =======
 =======
 >>>>>>> parent of 5c225ae... Merge pull request #46 from Can-ZHOU/profile-page
+=======
+>>>>>>> parent of 5c225ae... Merge pull request #46 from Can-ZHOU/profile-page
         <activity android:name=".OneMeetingActivity"></activity>
         <activity android:name=".JoinMeetingActivity" />
         <activity android:name=".CreateMeetingActivity" />
@@ -34,6 +37,9 @@
         <activity
             android:name=".HomeActivity"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 5c225ae... Merge pull request #46 from Can-ZHOU/profile-page
+=======
 >>>>>>> parent of 5c225ae... Merge pull request #46 from Can-ZHOU/profile-page
 =======
 >>>>>>> parent of 5c225ae... Merge pull request #46 from Can-ZHOU/profile-page

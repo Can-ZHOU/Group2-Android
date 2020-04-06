@@ -129,7 +129,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="392dp"
-        android:text=" John@gmail.com"
+        android:text=" john@gmail.com"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/mobile"
         app:layout_constraintStart_toEndOf="@+id/imageView"

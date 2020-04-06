@@ -3,6 +3,7 @@ package com.tcd3d5b.timezone;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,7 +37,7 @@ import static com.tcd3d5b.timezone.R.style.myTimePickerStyle;
 
 public class DashboardActivity extends AppCompatActivity {
     EditText start_time, end_time, date_choice, meeting_title;
-    TextView  join_meeting_text, create_meeting_text, email;
+    TextView  join_meeting_text, create_meeting_text;
     Spinner tzones;
     private DatabaseReference DBref;
 
@@ -47,7 +48,12 @@ public class DashboardActivity extends AppCompatActivity {
         start_time = findViewById(R.id.start_time);
         end_time = findViewById(R.id.end_time);
         date_choice = findViewById(R.id.date_choice);
-        email = findViewById(R.id.email);
+
+        final String myprefs = "myprefs";
+
+        SharedPreferences mpreferences = getSharedPreferences(myprefs,MODE_PRIVATE);
+
+        final String email = mpreferences.getString(getString(R.string.email),"");
 
         tzones = findViewById(R.id.tz_spinner);
 
@@ -108,7 +114,7 @@ public class DashboardActivity extends AppCompatActivity {
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
                             public void onTimeSet(TimePicker tp, int sHour, int sMinute) {
-                                start_time.setText(sHour + ":" + sMinute);
+                                end_time.setText(sHour + ":" + sMinute);
                             }
                         }, hour, minutes, true);
                 picker.show();
@@ -122,7 +128,7 @@ public class DashboardActivity extends AppCompatActivity {
                     if ((start_time.getText().toString().matches("((0[0-9]|1[0-9]|2[0-3]):[0-5][0-9])")) && (end_time.getText().toString().matches("((0[0-9]|1[0-9]|2[0-3]):[0-5][0-9])"))) {
                         Toast.makeText(getApplicationContext(), "Adding meeting", Toast.LENGTH_LONG).show();
                         long id = Instant.now().getEpochSecond();
-                        createMeeting(date_choice.getText().toString(), start_time.getText().toString(), end_time.getText().toString(), Long.toString(id), meeting_title.getText().toString(), email.getText().toString());
+                        createMeeting(date_choice.getText().toString(), start_time.getText().toString(), end_time.getText().toString(), Long.toString(id), meeting_title.getText().toString(), email, tzones.getSelectedItem().toString());
 
                         Intent cmt_intent = new Intent(getApplicationContext(), CreateMeetingActivity.class);
                         cmt_intent.putExtra("confirm_id_key", Long.toString(id));
@@ -162,7 +168,7 @@ public class DashboardActivity extends AppCompatActivity {
         });
     }
 
-    private void createMeeting(String date, String start_time, String end_time, String confirmId, String title, String email) {
+    private void createMeeting(String date, String start_time, String end_time, String confirmId, String title, String email, String loc) {
         DBref = FirebaseDatabase.getInstance().getReference();
         LocalTime t1 = LocalTime.parse(start_time);
         LocalTime t2 = LocalTime.parse(end_time);
@@ -172,6 +178,7 @@ public class DashboardActivity extends AppCompatActivity {
         DBref.child("meeting").child(confirmId).child("attendee").child("1").child("local_end").setValue(end_time);
         DBref.child("meeting").child(confirmId).child("attendee").child("1").child("standard_start").setValue("");
         DBref.child("meeting").child(confirmId).child("attendee").child("1").child("standard_end").setValue("");
+        DBref.child("meeting").child(confirmId).child("attendee").child("1").child("location").setValue(loc);
         DBref.child("meeting").child(confirmId).child("attendee").child("1").child("userid").setValue(email);
 
         DBref.child("meeting").child(confirmId).child("date").setValue(date);

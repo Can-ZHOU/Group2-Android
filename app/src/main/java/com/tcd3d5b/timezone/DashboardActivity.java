@@ -216,4 +216,8 @@ public class DashboardActivity extends AppCompatActivity {
         }
     }
 
+    public void launchJoinMeeting(View view) {
+        Intent intent = new Intent(this, JoinMeetingActivity.class);
+        startActivity(intent);
+    }
 }

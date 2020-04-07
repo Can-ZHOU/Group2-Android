@@ -49,6 +49,7 @@ It was all the teamwork which made it possible for us to complete the app even a
 Also I found the working of GitHub and how a team can manage to work on the same thing at the same time using GitHub. I also got to learn how easy it is to use GitHub with android studios.
 <br>
 I worked on some of the pages for the frontend design. And also collaborated some of the pages with group members.
+
 - **Ujjawal Aggarwal**
   - Learned how to work with GitHub.
   - Learned to tackle the problems of timezone, to collaborate with everyone and respect their ideas.
@@ -56,6 +57,7 @@ I worked on some of the pages for the frontend design. And also collaborated som
   - Learned how to integrate the Firebase with an Android Application
   - Debugging the issues coming up the project
   - Learned basic photoshop skills
+  
 - **Vishant Mittal**
 I have worked on many projects individually and in groups but this was my first experience working in a group for this long with these many members. Obviously, I got to know about others’ perspectives and some of their thought process which helped refine my ideas.
 <br>

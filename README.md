@@ -29,6 +29,11 @@ I was a part of the front end team for this project.I worked on a major part of 
   - I worked on the front end in this project and learned about some of the backend part.
   - I worked on a major part of the register page and the join meeting pages.
 
+- **Malay Tripathi**
+  - Managed Frontend for both Booking System(T life) and Time Zone Planner (Huddle) app.
+  - Did a few small things in the backend as well,but the team required me in the front end, so I designed quite a few layouts in T LIFE
+  like the Sign-in page and few layouts in Huddle.
+  
 ## What you would do with it if we had more time:
 - bababa
 - bababa

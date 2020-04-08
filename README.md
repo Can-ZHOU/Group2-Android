@@ -25,6 +25,9 @@ My role in this team was the role of secretary and to work with the frontend des
   - Also, managed few layouts while implementation
 - **Vishant Mittal**  
 I was a part of the front end team for this project.I worked on a major part of the login, the sign up and the join meeting pages. I mainly designed some of the layouts of the app. I even designed part of the theme used in the app.
+- **Shrey Wahi**
+  - I worked on the front end in this project and learned about some of the backend part.
+  - I worked on a major part of the register page and the join meeting pages.
 
 ## What you would do with it if we had more time:
 - bababa

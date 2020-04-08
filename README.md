@@ -1,38 +1,42 @@
 # Group2-Android
 
-## Project websit:
+## Project website:
 
-## Group member:
+## Group members:
 Can, Cormac, Malay, Rohan, Shrey, Tom, Ujjawal, Vishant
 
-## Vedio Demo:
+## Video Demo:
 
-## what this app is for:
+## What this app is for:
 
 ## The team - who did what (at high level):
+
 - **Cormac Doyle**  
 My role in this team was the role of secretary and to work with the frontend design team on layouts for the app. As secretary I attended and wrote minute reports on every meeting since the start of the project. These reports consisted of duration, attendance, issues and ideas discussed, assigned tasks, and a date and time for the next meeting. All these reports were stored in a google doc which every member had access to. I also designed the profile page layout for the current version of the app.
+
 - **Ujjawal Aggarwal**  
   - Managed Frontend for Booking System (T Life) and Backend for Time Zone Planner (Huddle) app
   - Booking System (worked on Login, and profiles pages ) and Huddle (worked on Home activity, Sign Up activity and Login Activity) and Group Icon
   - Firebase Authentication and Database integration
   - Also, added some basic functionalities like Reset password, remember me and Uploading Image.
   - Helped other teammates to design the User Interface
+  
 - **Rohan Taneja**  
   - Managed backend for both Booking System (T Life) and Time Zone Planner (Huddle) app
   - BookingSystem (worked on BookingActivity) and Huddle (worked on Dashboard for creating and joining meeting activity)
   - Firebase implementation and structure for data storage
   - Also, managed few layouts while implementation
+  
 - **Vishant Mittal**  
 I was a part of the front end team for this project.I worked on a major part of the login, the sign up and the join meeting pages. I mainly designed some of the layouts of the app. I even designed part of the theme used in the app.
+
 - **Shrey Wahi**
   - I worked on the front end in this project and learned about some of the backend part.
   - I worked on a major part of the register page and the join meeting pages.
 
 - **Malay Tripathi**
-  - Managed Frontend for both Booking System(T life) and Time Zone Planner (Huddle) app.
-  - Did a few small things in the backend as well,but the team required me in the front end, so I designed quite a few layouts in T LIFE
-  like the Sign-in page and few layouts in Huddle.
+  - Managed Front end for both Booking System(T life) and Time Zone Planner (Huddle) app.
+  - Did a few small things in the back end as well,but the team required me in the front end, so I designed quite a few layouts in T  Life like the Sign-in page and few layouts in Huddle.
   
 ## What you would do with it if we had more time:
 - bababa

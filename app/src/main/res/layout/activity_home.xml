@@ -97,6 +97,7 @@
         android:layout_marginTop="33dp"
         android:layout_marginEnd="57dp"
         android:layout_marginBottom="392dp"
+        android:text=" john@gmail.com"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/mobile"
         app:layout_constraintStart_toEndOf="@+id/imageView"

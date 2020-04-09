@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".DashboardActivity"
     android:orientation="vertical"
+    android:background="@drawable/bg"
+
     >
 
     <TextView
@@ -32,7 +34,9 @@
         android:ems="10"
         android:gravity="center_horizontal"
         android:hint="Meeting Title"
-        android:inputType="textEmailAddress" />
+        android:textColorHint="#b3b3b4"
+
+        />
 
     <EditText
         android:layout_below="@id/meeting_title"
@@ -44,6 +48,8 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="12dp"
         android:hint="yyyy-mm-dd"
+        android:textColorHint="#b3b3b4"
+
         android:gravity="center_horizontal" />
 
     <EditText
@@ -54,7 +60,8 @@
         android:layout_marginStart="120dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="12dp"
-        android:hint="hh:mm" />
+        android:hint="hh:mm"
+        android:textColorHint="#b3b3b4"/>
 
     <EditText
         android:id="@+id/end_time"
@@ -65,17 +72,19 @@
         android:layout_marginStart="85dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="12dp"
-        android:hint="hh:mm" />
+        android:hint="hh:mm"
+        android:textColorHint="#b3b3b4"/>
 
     <EditText
         android:layout_below="@id/date_choice"
         android:id="@+id/meeting_bio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:ems="10"
         android:gravity="start"
         android:hint="What's this meeting about?"
+        android:textColorHint="#b3b3b4"
         android:inputType="textMultiLine" />
 
     <TextView
@@ -91,37 +100,28 @@
         android:textSize="20sp"
         android:textColor="#FFFFFF"/>
 
-    <EditText
-        android:id="@+id/meeting_id"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/join_meeting_text"
-        android:layout_marginTop="30dp"
-        android:hint="Enter Meeting ID"
 
-        android:gravity="center"
-
-
-
-    />
 
     <Button
+        android:background="@drawable/toms_button"
         android:id = "@+id/join_meeting"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_below="@id/meeting_id"
+        android:layout_below="@id/join_meeting_text"
         android:text = "Join Meeting!"
         android:textColor="#FFFFFF"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"  />
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="launchJoinMeeting"/>
 
     <Spinner
         android:id="@+id/tz_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="280dp"
         android:entries="@array/tzones_array"
-        android:hint="Select Time Zone"/>
+        android:hint="Select Time Zone"
+        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -132,4 +132,24 @@
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_navigation" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="189dp"
+        app:srcCompat="@android:drawable/ic_menu_recent_history" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="137dp"
+        app:srcCompat="@android:drawable/ic_menu_my_calendar" />
 </RelativeLayout>

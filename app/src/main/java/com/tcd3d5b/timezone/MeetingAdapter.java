@@ -65,17 +65,17 @@ public class MeetingAdapter extends BaseAdapter {
 
         }
         holder.meetingName.setText((String) listItem.get(position).get("meetingName"));
-        holder.meetingDate.setText((String) listItem.get(position).get("meetingDate"));
-        holder.meetingTime.setText((String) listItem.get(position).get("meetingTime"));
-        holder.meetingDuration.setText((String) listItem.get(position).get("meetingDuration"));
-        holder.meetingID.setText((String) listItem.get(position).get("meetingID"));
+        holder.meetingDate.setText(" Date:  " + (String) listItem.get(position).get("meetingDate"));
+        holder.meetingTime.setText(" Start Time:  " + (String) listItem.get(position).get("meetingTime"));
+        holder.meetingDuration.setText(" Duration:  " + (String) listItem.get(position).get("meetingDuration"));
+        holder.meetingID.setText(" Meeting ID:  " + (String) listItem.get(position).get("meetingID"));
         holder.button_detail.setText((String) listItem.get(position).get("button_detail"));
         final String str = (String) listItem.get(position).get("meetingID");
         holder.button_detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                Intent intent=new Intent();
+                Intent intent=new Intent(context, OneMeetingActivity.class);
                 bundle.putString("meetingID", str);
                 intent.putExtra("meeting_detail", bundle);
                 context.startActivity(intent);

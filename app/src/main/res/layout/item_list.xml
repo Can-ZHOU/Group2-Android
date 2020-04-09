@@ -22,46 +22,67 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="meetingName" />
+                android:text="meetingName"
+                android:textAlignment="center"
+                android:textColor="#9A1717"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/meetingDate"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_weight="1"
                 android:layout_below="@id/meetingName"
-                android:text="meetingDate" />
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="meetingDate"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/meetingTime"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_weight="1"
                 android:layout_below="@id/meetingDate"
-                android:text="meetingTime" />
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="meetingTime"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/meetingDuration"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_weight="1"
                 android:layout_below="@id/meetingTime"
-                android:text="meetingDuration" />
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="meetingDuration"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/meetingID"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_weight="1"
                 android:layout_below="@id/meetingDuration"
-                android:text="meetingID" />
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="meetingID"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/button_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/meetingID"
-                android:text="Detail" />
+
+                android:background="@drawable/button_meeting"
+                android:text="Detail"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
 
         </RelativeLayout>

@@ -118,20 +118,20 @@ public class HomeActivity extends AppCompatActivity {
         TextView eml;
         eml = findViewById(R.id.email);
 
-        SharedPreferences mpreferences;
+        SharedPreferences mpreferences2;
         SharedPreferences.Editor meditor;
 
-        mpreferences =getSharedPreferences("myprefs",MODE_PRIVATE);
-        meditor = mpreferences.edit();
+        mpreferences2 =getSharedPreferences("myprefs",MODE_PRIVATE);
+        meditor = mpreferences2.edit();
 
-        String email = eml.getText().toString();
-        meditor.putString(getString(R.string.email),email);
+        String email2 = eml.getText().toString();
+        meditor.putString(getString(R.string.email),email2);
         meditor.commit();
 
 
-        mpreferences =getSharedPreferences("myprefs",MODE_PRIVATE);
+        mpreferences2 =getSharedPreferences("myprefs",MODE_PRIVATE);
 
-        mpreferences.edit();
+        mpreferences2.edit();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);

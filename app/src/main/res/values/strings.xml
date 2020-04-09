@@ -1,10 +1,11 @@
 <resources>
-    <string name="app_name">Timezone Meeting Planner</string>
+    <string name="app_name">Huddle</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">New Meeting</string>
     <string name="title_notifications">My Meetings</string>
     <string name="email">package com.tcd3d5b.timezone.email;</string>
-
+    <string name="password">package com.tcd3d5b.timezone.pwd;</string>
+    <string name="radio">package com.tcd3d5b.timezone;</string>
     <string-array name="tzones_array">
         <item>Ireland (GMT +1)</item>
         <item>India (GMT +5.30)</item>

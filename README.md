@@ -1,63 +1,83 @@
 # Group2-Android
-## Group Member:
-- Can
-- Cormac
-- Malay
-- Rohan
-- Shrey
-- Tom
-- Ujjawal
-- Vishant
-## About
-- An App to make your life at Trinity College Dublin easier!
-- Main Features (so far)
-  - :white_check_mark: Sign up and create your profile
-  - :white_check_mark: Book scss glassrooms through an online booking system
-  - :white_check_mark: Meet up with your professors by booking appointments into their timetables
-  - :white_check_mark: An added game for extra fun :)
-## App structure 
-**:white_check_mark: : Finished and Merged.   :computer: : TODO**
-### Login/Register
-- Layout
-  - :computer: Working on app logo. --> [Ujjawal]
-  - :white_check_mark: Finish layout for login page and working on register page. --> [Ujjawal]
-- Backend
-  - :white_check_mark: Connect to firebase database, achieved basic functions. --> [Can]
-  - :white_check_mark: Check the validation of input email address. --> [Malay]
-  - :white_check_mark: Add remember me function to store cookies internally. --> [Ujjawal]
 
-### Profile
-- Layout 
-   - :white_check_mark: Finish layout for user profile. --> [Ujjawal]
-- Backend
-  - :white_check_mark: Finish basic functions to show user profile. --> [Ujjawal]
-  - :white_check_mark: Finish reset password function by using firebase email. --> [Can]
+## Project website:
+
+## Group members:
+Can, Cormac, Malay, Rohan, Shrey, Tom, Ujjawal, Vishant
+
+## Video Demo:
+
+## What this app is for:
+
+## The team - who did what (at high level):
+
+- **Cormac Doyle**  
+My role in this team was the role of secretary and to work with the frontend design team on layouts for the app. As secretary I attended and wrote minute reports on every meeting since the start of the project. These reports consisted of duration, attendance, issues and ideas discussed, assigned tasks, and a date and time for the next meeting. All these reports were stored in a google doc which every member had access to. I also designed the profile page layout for the current version of the app.
+
+- **Ujjawal Aggarwal**  
+  - Managed Frontend for Booking System (T Life) and Backend for Time Zone Planner (Huddle) app
+  - Booking System (worked on Login, and profiles pages ) and Huddle (worked on Home activity, Sign Up activity and Login Activity) and Group Icon
+  - Firebase Authentication and Database integration
+  - Also, added some basic functionalities like Reset password, remember me and Uploading Image.
+  - Helped other teammates to design the User Interface
   
-### Choice page (Professor/Student)
-- Layout
-- Backend
-  - :white_check_mark: link each page. --> [Can]
+- **Rohan Taneja**  
+  - Managed backend for both Booking System (T Life) and Time Zone Planner (Huddle) app
+  - BookingSystem: worked on BookingActivity - booking reservation system, room booking and join the booked room
+  - Huddle: worked on DashboardActivity for creation and joining meeting
+  - Implemented validation algorithms where needed.
+  - Firebase implementation and structure for data storage
+  - Also, managed few layouts while implementation
   
-### Professor's Timetable (Student version)
-- Layout
-- Backend
-  - :white_check_mark: Finish all basic functions: search professor's timetable, show professor valid time, let student can book specific valid time to meet professor. --> [Can]
-  - :computer: Check whether all inputs are valid. -->[Roham]
+- **Vishant Mittal**  
+I was a part of the front end team for this project.I worked on a major part of the login, the sign up and the join meeting pages. I mainly designed some of the layouts of the app. I even designed part of the theme used in the app.
 
-### Professor's Timetable (Professor version)
-- Layout
-- Backend
-  - :white_check_mark: Finish all basic functions: show specific professor's timetable, add a new meeting time in professor's timetable --> [Can]
-  - :computer: Check whether all inputs are valid. -->[Roham]
- 
-### Booking Glassroom
-- Layout
-- Backend
-  - :white_check_mark: Connect to the database, readbooked room from database and select&add room for specific date and time. --> [Can]
-  - :white_check_mark: Check whether input date and time is valid and finish the confirm page. --> [Roham]
+- **Shrey Wahi**
+  - I worked on the front end in this project and learned about some of the backend part.
+  - I worked on a major part of the register page and the join meeting pages.
 
-### Game
-- Layout
-   - :white_check_mark: Finished game choice page. --> [Ujjawal]
-- Backend
-  - :white_check_mark: Finished a simple game - 2048 --> [Can]
+- **Malay Tripathi**
+  - Managed Front end for both Booking System(T life) and Time Zone Planner (Huddle) app.
+  - Did a few small things in the back end as well,but the team required me in the front end, so I designed quite a few layouts in T  Life like the Sign-in page and a few layouts in Huddle.
+  
+## What you would do with it if we had more time:
+- bababa
+- bababa
+
+## Experiences:
+- **Cormac Doyle**  
+I found what worked well with the team was the GitHub project with Android Studio. All members were able to work on their respective branches and then commit it to the github project for all members to view. Android Studio is also easy to use and very compatible with GitHub. 
+- **Rohan Taneja**  
+  - Learned working in Studio IDE
+  - Working on virtual enviroment to test run and debug application
+  - Learned how to use version control applications like GitHub to manage the projects easily and debug issues faced.
+  - New functionalities in Java programming and their application
+  - Debugged the backend implementation and fixing issues faced by the team
+  - Working with a diverse team having discreet knowledge
+  - Handling obstacles faced working remotely in different time zones
+  - Collaborating with various team members and uniform work distribution
+  
+- **Shrey Wahi**  
+This project helped me a lot with the working of an android app. I got to learn the basics of making and designing an android application and also got to learn java from online sources and also the group members.
+It was all the teamwork which made it possible for us to complete the app even after being in different time zones. It was a great experience on how all the members of the group discussed their ideas on Zoom.
+Also I found the working of GitHub and how a team can manage to work on the same thing at the same time using GitHub. I also got to learn how easy it is to use GitHub with android studios.
+I worked on some of the pages for the frontend design. And also collaborated some of the pages with group members.
+
+- **Ujjawal Aggarwal**  
+  - Learned how to work with GitHub.
+  - Learned to tackle the problems of timezone, to collaborate with everyone and respect their ideas.
+  - Learned a lot about Java Concepts and functionalities.
+  - Learned how to integrate the Firebase with an Android Application
+  - Debugging the issues coming up the project
+  - Learned basic photoshop skills
+  
+- **Vishant Mittal**  
+I have worked on many projects individually and in groups but this was my first experience working in a group for this long with these many members. Obviously, I got to know about others’ perspectives and some of their thought process which helped refine my ideas.
+I got to know about various platforms like android studio and github. It was mostly just google your tasks and get them working. This taught me a lot of new stuff.
+This project involved a lot of our time working remotely due to the ongoing pandemic. Video conferencing platforms like zoom and whatsapp were used to collaborate for the project.
+I think that our team successfully completing the project in spite of being in different parts of the world is evidence to the fact that the primary goal of team work was achieved.
+
+- **Malay Tripathi**
+  - Before this module, I had zero experience working with Android Studio, but in the end, I can happily say that I have learned a lot, not just in the field of Android development but also through collaborative working. From making various Front end layouts like the sign-in page for T Life to email authentication in the Back end, I have learned and enjoyed a lot-be it Front end or Back end! 
+  - The best thing that I have experienced through this module is that it is self-taught which opens the door to explore the depths of this course and learn/understand things self-paced.
+  - For the first time I worked in a large group of 8 people, this clearly helped me visualize things from others’ perspective. All 8 of us synced very well- my special mention will be for our Technical Leader, Can, she was very supportive and helped me whenever I needed, be it 12pm or 4am! Regardless of being in different Time zones we all put a serious effort into this Project.

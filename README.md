@@ -38,7 +38,7 @@ I was a part of the front end team for this project.I worked on a major part of 
 
 - **Malay Tripathi**
   - Managed Front end for both Booking System(T life) and Time Zone Planner (Huddle) app.
-  - Did a few small things in the back end as well,but the team required me in the front end, so I designed quite a few layouts in T  Life like the Sign-in page and few layouts in Huddle.
+  - Did a few small things in the back end as well,but the team required me in the front end, so I designed quite a few layouts in T  Life like the Sign-in page and a few layouts in Huddle.
   
 ## What you would do with it if we had more time:
 - bababa
@@ -77,3 +77,7 @@ I got to know about various platforms like android studio and github. It was mos
 This project involved a lot of our time working remotely due to the ongoing pandemic. Video conferencing platforms like zoom and whatsapp were used to collaborate for the project.
 I think that our team successfully completing the project in spite of being in different parts of the world is evidence to the fact that the primary goal of team work was achieved.
 
+- **Malay Tripathi**
+Before this module, I had zero experience working with Android Studio, but in the end, I can happily say that I have learned a lot, not just in the field of Android development but also through collaborative working. From making various Front end layouts like the sign-in page for T Life to email authentication in the Back end, I have learned and enjoyed a lot-be it Front end or Back end! 
+The best thing that I have experienced through this module is that it is self-taught which opens the door to explore the depths of this course and learn/understand things self-paced.
+For the first time I worked in a large group of 8 people, this clearly helped me visualize things from others’ perspective. All 8 of us synced very well- my special mention will be for our Technical Leader, Can, she was very supportive and helped me whenever I needed, be it 12pm or 4am! Regardless of being in different Time zones we all put a serious effort into this Project.

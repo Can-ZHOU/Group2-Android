@@ -23,7 +23,9 @@ My role in this team was the role of secretary and to work with the frontend des
   
 - **Rohan Taneja**  
   - Managed backend for both Booking System (T Life) and Time Zone Planner (Huddle) app
-  - BookingSystem (worked on BookingActivity) and Huddle (worked on Dashboard for creating and joining meeting activity)
+  - BookingSystem: worked on BookingActivity - booking reservation system, room booking and join the booked room
+  - Huddle: worked on DashboardActivity for creation and joining meeting
+  - Implemented validation algorithms where needed.
   - Firebase implementation and structure for data storage
   - Also, managed few layouts while implementation
   
@@ -47,12 +49,14 @@ I was a part of the front end team for this project.I worked on a major part of 
 I found what worked well with the team was the GitHub project with Android Studio. All members were able to work on their respective branches and then commit it to the github project for all members to view. Android Studio is also easy to use and very compatible with GitHub. 
 - **Rohan Taneja**  
   - Learned working in Studio IDE
+  - Working on virtual enviroment to test run and debug application
   - Learned how to use version control applications like GitHub to manage the projects easily and debug issues faced.
   - New functionalities in Java programming and their application
   - Debugged the backend implementation and fixing issues faced by the team
   - Working with a diverse team having discreet knowledge
   - Handling obstacles faced working remotely in different time zones
   - Collaborating with various team members and uniform work distribution
+  
 - **Shrey Wahi**  
 This project helped me a lot with the working of an android app. I got to learn the basics of making and designing an android application and also got to learn java from online sources and also the group members.
 It was all the teamwork which made it possible for us to complete the app even after being in different time zones. It was a great experience on how all the members of the group discussed their ideas on Zoom.

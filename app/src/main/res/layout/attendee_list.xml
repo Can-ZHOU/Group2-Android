@@ -22,7 +22,9 @@
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="attendeeName" />
+                android:text="attendeeName"
+                android:textStyle="bold"
+                android:textColor="#9A1717"/>
 
             <TextView
                 android:id="@+id/attendeeLocation"
@@ -30,6 +32,7 @@
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:layout_toRightOf="@id/attendeeName"
+                android:textStyle="bold"
                 android:text="meetingDate" />
 
             <TextView
@@ -38,6 +41,7 @@
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:layout_below="@id/attendeeLocation"
+                android:textStyle="bold"
                 android:text="attendeeLocalTime" />
 
             <TextView
@@ -46,6 +50,7 @@
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:layout_below="@id/attendeeLocalTime"
+                android:textStyle="bold"
                 android:text="attendeeStandardTime" />
 
 

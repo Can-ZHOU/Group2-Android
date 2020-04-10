@@ -146,6 +146,7 @@ public class NotificationsActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if( !dataSnapshot.exists() || !dataSnapshot.hasChildren()) {
+                    Log.d((String) TAG, "hiiii");
                     Toast.makeText(getApplicationContext(), "You haven't any meeting.", Toast.LENGTH_LONG).show();
                 } else {
                     for(DataSnapshot child : dataSnapshot.getChildren()) {

@@ -3,7 +3,6 @@ package com.tcd3d5b.timezone;
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.widget.EditText;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -114,24 +113,6 @@ public class HomeActivity extends AppCompatActivity {
                         });
             }
         });
-
-        TextView eml;
-        eml = findViewById(R.id.email);
-
-        SharedPreferences mpreferences2;
-        SharedPreferences.Editor meditor;
-
-        mpreferences2 =getSharedPreferences("myprefs",MODE_PRIVATE);
-        meditor = mpreferences2.edit();
-
-        String email2 = eml.getText().toString();
-        meditor.putString(getString(R.string.email),email2);
-        meditor.commit();
-
-
-        mpreferences2 =getSharedPreferences("myprefs",MODE_PRIVATE);
-
-        mpreferences2.edit();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);

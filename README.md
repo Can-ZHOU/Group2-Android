@@ -53,7 +53,10 @@ My role in this team was the role of secretary and to work with the frontend des
   - Also, added some basic functionalities like Reset password, remember me and Uploading Image.
   - Helped other teammates to design the User Interface
 - **Vishant Mittal**  
-I was a part of the front end team for this project.I worked on a major part of the login, the sign up and the join meeting pages. I mainly designed some of the layouts of the app. I even designed part of the theme used in the app.
+-I was a part of the front end team for this project.
+-I worked on a major part of the login, the sign up and the join meeting pages. 
+-I mainly designed some of the layouts of the app. 
+-I even designed part of the theme used in the app.
   
 ## What you would do with it if we had more time:
 - Enhance and clean up front end layouts

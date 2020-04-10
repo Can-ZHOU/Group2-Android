@@ -94,7 +94,10 @@ public class DashboardActivity extends AppCompatActivity {
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
                             public void onTimeSet(TimePicker tp, int sHour, int sMinute) {
-                                start_time.setText(sHour + ":" + sMinute);
+                                if(sMinute < 10)
+                                    start_time.setText(sHour + ":0" + sMinute);
+                                else
+                                    start_time.setText(sHour + ":" + sMinute);
                             }
                         }, hour, minutes, true);
                 picker.show();
@@ -114,7 +117,10 @@ public class DashboardActivity extends AppCompatActivity {
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
                             public void onTimeSet(TimePicker tp, int sHour, int sMinute) {
-                                end_time.setText(sHour + ":" + sMinute);
+                                if(sMinute < 10)
+                                    end_time.setText(sHour + ":0" + sMinute);
+                                else
+                                    end_time.setText(sHour + ":" + sMinute);
                             }
                         }, hour, minutes, true);
                 picker.show();

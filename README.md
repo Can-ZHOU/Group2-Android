@@ -40,6 +40,12 @@ My role in this team was the role of secretary and to work with the frontend des
 - **Shrey Wahi**
   - I worked on the front end in this project and learned about some of the backend part.
   - I worked on a major part of the register page and the join meeting pages.
+- **Tom Mulligan**
+My job was the group leader.
+It was my responsibility to ensure the smooth working of the group throughout the semester. As part of this, I  had to coordinate with members individually, keep a balanced review of the group's overall progress and lead the group through implementing our plan in an efficient as realistic manner.
+This role did pose challenges throughout the semester. The transition from the group of four to the group of eight required that I communicate frequently with group members and relay any queries to the overall group. The initial phase of deciding the direction that the group was to follow posed challenges in this regard. However I do think that the group dynamic did work well, with very few disagreements occurring and deadlines rarely being missed.
+More recently, my role as group leader has become more intensive, especially in the area of maintaining a consistent level of contact via WhatsApp and Zoom. Coordinating with differing time zones and commitments have meant that organising meetings and making contact is a lot more difficult than before. However to credit the group, we have pulled through and continued with great progress recently.
+
 - **Ujjawal Aggarwal**  
   - Managed Frontend for Booking System (T Life) and Backend for Time Zone Planner (Huddle) app
   - Booking System (worked on Login, and profiles pages ) and Huddle (worked on Home activity, Sign Up activity and Login Activity) and Group Icon

@@ -9,7 +9,6 @@
   >
 
 
-
     <TextView
         android:id="@+id/create_meeting_text"
         android:layout_width="match_parent"
@@ -82,17 +81,6 @@
             android:onClick="showTimePickerDialog"/>
 
     </LinearLayout>
-
-    <EditText
-        android:id="@+id/meeting_bio"
-        android:hint="What's this meeting about?"
-        android:layout_marginTop="24dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="start"
-        android:inputType="textMultiLine"
-        />
 
     <TextView
         android:id="@+id/join_meeting_text"

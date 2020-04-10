@@ -65,7 +65,7 @@
         android:layout_marginStart="72dp"
         android:layout_marginLeft="72dp"
         android:layout_marginTop="320dp"
-        android:hint="City"
+        android:hint="Location"
         android:inputType="text"
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/white" />

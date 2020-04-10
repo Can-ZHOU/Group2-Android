@@ -7,20 +7,20 @@
     tools:context=".CreateMeetingActivity"
     android:background="@drawable/bg">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:layout_marginTop="190dp"
-        android:layout_marginStart="136dp"
-        android:text="Your Meeting has been confirmed!"
-        android:gravity="center"
-        android:textSize="18dp"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="248dp"
+        android:gravity="center"
+        android:text="Your Meeting has been confirmed!"
         android:textColor="#FFFFFF"
-        android:background="@drawable/light_box"/>
-
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView5"
@@ -32,7 +32,9 @@
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:text="Booking ID: "
-        android:textColor="#FFFFFF"/>
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/confirmID"
@@ -43,7 +45,9 @@
         android:layout_marginTop="360dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/create_date"
@@ -53,11 +57,14 @@
         android:layout_marginStart="200dp"
         android:layout_marginTop="380dp"
         android:layout_marginEnd="12dp"
-        android:ems="10" />
+        android:ems="10"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/create_date0"
-        android:layout_width="100dp"
+        android:layout_width="132dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="100dp"
@@ -65,7 +72,9 @@
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:text="Meeting Date: "
-        android:textColor="#FFFFFF"/>
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/create_s_time"
@@ -76,7 +85,9 @@
         android:layout_marginTop="400dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/create_s_time0"
@@ -88,7 +99,9 @@
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:text="Start Time:"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/create_e_time"
@@ -99,7 +112,9 @@
         android:layout_marginTop="420dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/create_e_time0"
@@ -111,7 +126,9 @@
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:text="End Time: "
-        android:textColor="#FFFFFF"/>
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"

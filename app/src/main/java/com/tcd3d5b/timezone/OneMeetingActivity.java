@@ -115,7 +115,7 @@ public class OneMeetingActivity extends AppCompatActivity {
                                 localTime = attendee.getValue().toString();
                             } else if(i==1) {
                                 localTime = attendee.getValue().toString() + " - " + localTime;
-                                map.put("attendeeLocalTime", localTime);
+                                map.put("attendeeLocalTime", "Local Time: " + localTime);
                                 Log.d((String) TAG, localTime);
                             } else if(i==2) {
                                 map.put("attendeeLocation", attendee.getValue().toString());
@@ -124,7 +124,7 @@ public class OneMeetingActivity extends AppCompatActivity {
                                 standardTime = attendee.getValue().toString();
                             } else if(i==4) {
                                 standardTime = attendee.getValue().toString() + " - " + standardTime;
-                                map.put("attendeeStandardTime", standardTime);
+                                map.put("attendeeStandardTime", "Standard Time: " + standardTime);
                                 Log.d((String) TAG, standardTime);
                             } else {
                                 map.put("attendeeName", attendee.getValue().toString());
@@ -153,7 +153,7 @@ public class OneMeetingActivity extends AppCompatActivity {
                     String suggestTime="";
                     for(DataSnapshot child : dataSnapshot.getChildren()) {
                         if(i==1) {
-                            Date.setText(child.getValue().toString());
+                            Date.setText("Meeting Date: " + child.getValue().toString());
                             Log.d((String) TAG, child.getValue().toString());
                         } else if(i==2) {
                             Time_end.setText(child.getValue().toString());

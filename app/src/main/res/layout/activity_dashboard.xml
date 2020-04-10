@@ -7,26 +7,24 @@
     tools:context=".DashboardActivity"
     android:orientation="vertical"
     android:background="@drawable/bg"
-
     >
 
     <TextView
         android:id="@+id/create_meeting_text"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/light_box"
         android:gravity="center"
-        android:layout_marginTop="5dp"
         android:text="Create a new Meeting!"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        />
+        android:textSize="20sp" />
 
     <EditText
-        android:layout_below="@id/create_meeting_text"
         android:id="@+id/meeting_title"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_below="@id/create_meeting_text"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="100dp"
         android:layout_marginTop="20dp"
@@ -34,73 +32,67 @@
         android:ems="10"
         android:gravity="center_horizontal"
         android:hint="Meeting Title"
-        android:textColorHint="#b3b3b4"
+        android:textColor="@color/white"
 
-        />
+        android:textColorHint="#b3b3b4" />
+
 
     <EditText
-        android:layout_below="@id/meeting_title"
         android:id="@+id/date_choice"
         android:layout_width="108dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/meeting_title"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="12dp"
+        android:gravity="center_horizontal"
         android:hint="yyyy-mm-dd"
-        android:textColorHint="#b3b3b4"
 
-        android:gravity="center_horizontal" />
+        android:textColor="@color/white"
+        android:textColorHint="#b3b3b4" />
 
     <EditText
-        android:layout_below="@id/date_choice"
         android:id="@+id/start_time"
         android:layout_width="72dp"
         android:layout_height="wrap_content"
+        android:layout_below="@id/date_choice"
         android:layout_marginStart="120dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="37dp"
         android:layout_marginEnd="12dp"
         android:hint="hh:mm"
-        android:textColorHint="#b3b3b4"/>
+        android:textColor="@color/white"
+        android:textColorHint="#b3b3b4" />
 
     <EditText
         android:id="@+id/end_time"
         android:layout_width="72dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/start_time"
         android:layout_below="@id/date_choice"
+        android:layout_alignLeft="@id/start_time"
         android:layout_marginStart="85dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="38dp"
         android:layout_marginEnd="12dp"
         android:hint="hh:mm"
-        android:textColorHint="#b3b3b4"/>
-
-    <EditText
-        android:layout_below="@id/date_choice"
-        android:id="@+id/meeting_bio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:ems="10"
-        android:gravity="start"
-        android:hint="What's this meeting about?"
-        android:textColorHint="#b3b3b4"
-        android:inputType="textMultiLine" />
+        android:textColor="@color/white"
+        android:textColorHint="#b3b3b4" />
 
     <TextView
         android:id="@+id/join_meeting_text"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="396dp"
+        android:layout_height="49dp"
+        android:layout_above="@+id/bottom_navigation"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="420dp"
         android:layout_marginEnd="12dp"
+        android:layout_marginBottom="77dp"
         android:background="@drawable/light_box"
         android:gravity="center"
         android:text="Or join a meeting!"
-        android:textSize="20sp"
-        android:textColor="#FFFFFF"/>
-
-
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
     <Button
         android:background="@drawable/toms_button"
@@ -118,10 +110,10 @@
         android:id="@+id/tz_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
+        android:layout_below="@+id/date_choice"
+        android:layout_marginTop="147dp"
         android:entries="@array/tzones_array"
-        android:hint="Select Time Zone"
-        />
+        android:hint="Select Time Zone" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -139,8 +131,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="189dp"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="233dp"
         app:srcCompat="@android:drawable/ic_menu_recent_history" />
 
     <ImageView
@@ -149,7 +141,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="137dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="158dp"
         app:srcCompat="@android:drawable/ic_menu_my_calendar" />
 </RelativeLayout>

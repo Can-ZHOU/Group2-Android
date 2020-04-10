@@ -16,83 +16,96 @@
         android:textStyle="bold"
         android:textSize="30dp"
         />
+
     <TextView
         android:id="@+id/one_meeting_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:text="Meeting Date"
-        android:textStyle="bold"
-        android:textSize="20dp"
         android:layout_below="@+id/one_meeting_name"
-        />
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="Meeting Date"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
 
     <TextView
         android:id="@+id/one_meeting_suggest"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_below="@+id/one_meeting_date"
         android:layout_marginTop="20dp"
         android:text="Suggest Time Slot"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/one_meeting_date"
-        />
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/one_meeting_selctTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Please Select Meeting Time:"
-        android:textStyle="bold"
-        android:textSize="20dp"
         android:layout_below="@+id/one_meeting_suggest"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/one_meeting_selctTime"
-        android:id="@id/inputTime"
-        >
+        android:layout_marginTop="10dp"
+        android:text="Please Input Meeting Time:"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
         <EditText
             android:id="@+id/editStartTime"
             android:layout_width="100dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:ems="10"
             android:inputType="time"
+            android:layout_below="@+id/one_meeting_selctTime"
             />
+    <TextView
+        android:id="@+id/one_meeting_duarion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editStartTime"
+        android:layout_marginTop="10dp"
+        android:text="Please Input Meeting Duration:"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
         <EditText
             android:id="@+id/editEndTime"
             android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:ems="10"
+            android:layout_height="wrap_content"
             android:layout_alignRight="@+id/editStartTime"
-            android:inputType="time"/>
-    </LinearLayout>
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/one_meeting_duarion"
+            android:inputType="time" />
+
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/editEndTime"
+        android:background="#9A1717"
         android:gravity="center_horizontal"
         android:text="Save"
-        android:layout_below="@+id/inputTime"/>
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/one_meeting_member"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:text="Group Members:"
-        android:textStyle="bold"
-        android:textSize="20dp"
         android:layout_below="@+id/button"
-        />
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="Group Members:"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
     <ListView
         android:layout_width="match_parent"
         android:height="100dp"

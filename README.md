@@ -28,7 +28,8 @@ Our app is a virtual meeting planner. It is designed to take time-zone details f
 My role in this team was the role of secretary and to work with the frontend design team on layouts for the app. As secretary I attended and wrote minute reports on every meeting since the start of the project. These reports consisted of duration, attendance, issues and ideas discussed, assigned tasks, and a date and time for the next meeting. All these reports were stored in a google doc which every member had access to. I also designed the profile page layout for the current version of the app.
 - **Malay Tripathi**
   - Managed Front end for both Booking System(T life) and Time Zone Planner (Huddle) app.
-  - Did a few small things in the back end as well,but the team required me in the front end, so I designed quite a few layouts in T  Life like the Sign-in page and a few layouts in Huddle.
+  - Did a few small things in the back end as well like email authentication,etc.
+  - But the team required me in the front end, so I designed quite a few layouts in "T Life" like the Sign-in page and a few layouts in   Huddle.
   
 - **Rohan Taneja**  
   - Managed backend for both Booking System (T Life) and Time Zone Planner (Huddle) app

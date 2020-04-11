@@ -6,7 +6,7 @@
 Can, Cormac, Malay, Rohan, Shrey, Tom, Ujjawal, Vishant
 
 ## Video Demo:
-
+**https://www.youtube.com/watch?v=oA5gN1mJLMI&feature=youtu.be**
 ## What this app is for:
 Our app is a virtual meeting planner. It is designed to take time-zone details from group members and create a meeting time that suits everyone. Anyone can make a meeting. As it is done so in a very user friendly way to minimise exposure to the algorithm deciding on what time suits best. Once a meeting is created, the host can share the meeting ID to their group members which they can use to join the meeting.
 ## The team - who did what (at high level):
@@ -70,8 +70,16 @@ My role in this team was the role of secretary and to work with the frontend des
 - File sharing features within the app
 
 ## Experiences:
+- **Can Zhou**
+  - Although we did not get a very good ranking in the eighth week’s presentation, we reflected in time and sought help from the professor. More importantly, we summarized the failures in the old app (such as unreasonable GitHub branch separation, defective database design, and too simple front-end design) and avoided these problems in the new app. And I have confidence that this final app is much better than the previous app in terms of design and function implementation.   
+  - I am grateful to my teammates. This is a challenging project especially at this special time, but we worked well together, and all have good self-learning ability. I also got many brilliant ideas from them and what they achieved really impressed me. Everyone has done some remarkable achievement in this project and I believe we all learned a lot from this project. Moreover, I would like to thank Professor Stephen Barrett who always gave us guidance and provided the time zone, this fantastic idea for our final app.
+
 - **Cormac Doyle**  
 I found what worked well with the team was the GitHub project with Android Studio. All members were able to work on their respective branches and then commit it to the github project for all members to view. Android Studio is also easy to use and very compatible with GitHub. 
+- **Malay Tripathi**
+  - Before this module, I had zero experience working with Android Studio, but in the end, I can happily say that I have learned a lot, not just in the field of Android development but also through collaborative working. From making various Front end layouts like the sign-in page for T Life to email authentication in the Back end, I have learned and enjoyed a lot-be it Front end or Back end! 
+  - The best thing that I have experienced through this module is that it is self-taught which opens the door to explore the depths of this course and learn/understand things self-paced.
+  - For the first time I worked in a large group of 8 people, this clearly helped me visualize things from others’ perspective. All 8 of us synced very well- my special mention will be for our Technical Leader, Can, she was very supportive and helped me whenever I needed, be it 12pm or 4am! Regardless of being in different Time zones we all put a serious effort into this Project.
 - **Rohan Taneja**  
   - Learned working in Studio IDE
   - Working on virtual enviroment to test run and debug application
@@ -101,8 +109,3 @@ I have worked on many projects individually and in groups but this was my first 
 I got to know about various platforms like android studio and github. It was mostly just google your tasks and get them working. This taught me a lot of new stuff.
 This project involved a lot of our time working remotely due to the ongoing pandemic. Video conferencing platforms like zoom and whatsapp were used to collaborate for the project.
 I think that our team successfully completing the project in spite of being in different parts of the world is evidence to the fact that the primary goal of team work was achieved.
-
-- **Malay Tripathi**
-  - Before this module, I had zero experience working with Android Studio, but in the end, I can happily say that I have learned a lot, not just in the field of Android development but also through collaborative working. From making various Front end layouts like the sign-in page for T Life to email authentication in the Back end, I have learned and enjoyed a lot-be it Front end or Back end! 
-  - The best thing that I have experienced through this module is that it is self-taught which opens the door to explore the depths of this course and learn/understand things self-paced.
-  - For the first time I worked in a large group of 8 people, this clearly helped me visualize things from others’ perspective. All 8 of us synced very well- my special mention will be for our Technical Leader, Can, she was very supportive and helped me whenever I needed, be it 12pm or 4am! Regardless of being in different Time zones we all put a serious effort into this Project.
